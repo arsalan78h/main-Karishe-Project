@@ -55,6 +55,11 @@ class DoRegisterViewController: UIViewController {
     @IBAction func registerButt(_ sender: Any) {
         
         if (userPhoneNum.hasText == false || userProfileName.hasText == false || userMail.hasText == false) {
+            //alert
+            DispatchQueue.main.async {
+                 _ = SCLAlertView().showError("مشکل در اطلاعات وارد شده", subTitle:"لطفاهمه اطلاعات را وارد کنید", closeButtonTitle:"تایید")
+            }
+           
             print("please complete information")
         } else {
             
@@ -91,18 +96,30 @@ class DoRegisterViewController: UIViewController {
                     // phone - userName - Email
                     if responseString == "000" {
                         //alert
-                        // verify code to phone number
+                        DispatchQueue.main.async {
+                        _ = SCLAlertView().showSuccess("ارسال کد", subTitle: "کد تایید برای شما ارسال شد")
                         print("you can create new account")
+                        }
                     }else if charResponseString[0] == "1" {
                         //alert
+                        DispatchQueue.main.async {
+                             _ = SCLAlertView().showWarning("توجه", subTitle: "این شماره موبایل قبلا ثیت شده")
+                        }
+                       
                         print("there is phone number")
                         
                     }else if charResponseString[1] == "1" {
                         //alert
+                        DispatchQueue.main.async {
+                           _ = SCLAlertView().showWarning("توجه", subTitle: "این نام کاربری قبلا ثبت شده")
+                        }
                         print("there is user name ")
                         
                     }else if charResponseString[2] == "1" {
                         //alert
+                        DispatchQueue.main.async {
+                            _ = SCLAlertView().showWarning("توجه", subTitle: "این ایمیل قبلا ثبت شده ")
+                        }
                         print("there is email")
                     }
                 }
@@ -110,6 +127,8 @@ class DoRegisterViewController: UIViewController {
             }
         }
     }
+    
+    //try animation alert later
 
 
 }
