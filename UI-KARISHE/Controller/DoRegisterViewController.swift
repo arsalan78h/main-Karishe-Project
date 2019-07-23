@@ -97,8 +97,13 @@ class DoRegisterViewController: UIViewController {
                     if responseString == "000" {
                         //alert
                         DispatchQueue.main.async {
-                        _ = SCLAlertView().showSuccess("ارسال کد", subTitle: "کد تایید برای شما ارسال شد")
                         print("you can create new account")
+                            let appearance = SCLAlertView.SCLAppearance(
+                                showCloseButton: false)
+                            let alertView = SCLAlertView(appearance: appearance)
+                            alertView.showSuccess("No button", subTitle: "create no butt success alert")
+                            alertView.addButton("First Button", target:self, selector:Selector(("firstButton")))
+                            alertView.showSuccess("ارسال کد", subTitle: "کد تایید برای شما ارسال شد")
                         }
                     }else if charResponseString[0] == "1" {
                         //alert
@@ -128,7 +133,11 @@ class DoRegisterViewController: UIViewController {
         }
     }
     
+    @objc func firstButton() {
+        
+        let secondVC = self.storyboard?.instantiateViewController(withIdentifier: "verifyPageViewController") as? verifyPageViewController
+        self.navigationController?.pushViewController(secondVC!, animated: true)
+    }
     //try animation alert later
-
-
+    
 }
