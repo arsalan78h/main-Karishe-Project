@@ -230,7 +230,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="bpe-p3-h8m" userLabel="main Stack View">
-                                <rect key="frame" x="19.666666666666657" y="57.333333333333314" width="374.66666666666674" height="621.33333333333348"/>
+                                <rect key="frame" x="19.666666666666657" y="76.333333333333314" width="374.66666666666674" height="583.33333333333348"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="49" translatesAutoresizingMaskIntoConstraints="NO" id="KAC-1H-gr6" userLabel="Text Field Stack View">
                                         <rect key="frame" x="0.0" y="0.0" width="322.66666666666669" height="583"/>
@@ -242,7 +242,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="نام خانوادگی" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Mh-qI-CDF" userLabel="family Text Field">
-                                                <rect key="frame" x="0.0" y="79" width="322.66666666666669" height="30"/>
+                                                <rect key="frame" x="0.0" y="79.000000000000014" width="322.66666666666669" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -254,7 +254,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ایمیل" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="36y-eC-6A5" userLabel="email Text Field">
-                                                <rect key="frame" x="0.0" y="236.99999999999997" width="322.66666666666669" height="30.000000000000028"/>
+                                                <rect key="frame" x="0.0" y="237" width="322.66666666666669" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -319,13 +319,13 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="family" translatesAutoresizingMaskIntoConstraints="NO" id="ho7-6w-nNe">
-                                                <rect key="frame" x="0.0" y="79" width="32" height="32"/>
+                                                <rect key="frame" x="0.0" y="79.000000000000014" width="32" height="32"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone" translatesAutoresizingMaskIntoConstraints="NO" id="jty-iZ-b2m">
                                                 <rect key="frame" x="0.0" y="158" width="32" height="32"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email" translatesAutoresizingMaskIntoConstraints="NO" id="iaT-a2-hE9">
-                                                <rect key="frame" x="0.0" y="236.99999999999997" width="32" height="32.000000000000028"/>
+                                                <rect key="frame" x="0.0" y="237" width="32" height="32"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="ug3-NZ-una">
                                                 <rect key="frame" x="0.0" y="316" width="32" height="32"/>
@@ -369,7 +369,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fGo-Z0-1EV" userLabel="Register Button">
-                                <rect key="frame" x="20" y="698.66666666666663" width="374" height="34"/>
+                                <rect key="frame" x="20" y="679.66666666666663" width="374" height="34"/>
                                 <color key="backgroundColor" red="0.0" green="0.20000000000000001" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <state key="normal" title="دریافت کد تایید">
@@ -539,6 +539,6 @@
         <image name="verifypass" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="HTv-ey-BDv"/>
+        <segue reference="Ncl-eN-rOf"/>
     </inferredMetricsTieBreakers>
 </document>

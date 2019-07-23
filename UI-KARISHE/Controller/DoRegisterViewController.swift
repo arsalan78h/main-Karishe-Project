@@ -65,13 +65,13 @@ class DoRegisterViewController: UIViewController {
             print("please complete information")
         } else {
             
-            let url = URL(string: "https://www.karishe.com/wp-admin/admin-ajax.php")!
+            let url = URL(string: "https://www.karishe.com/wp-json/wp/v2/check-user")!
             var request = URLRequest(url: url)
             request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
             request.httpMethod = "POST"
             
             let parameters: [String: Any] = [
-                "action": "sms_check_mobile",
+          //      "action": "sms_check_mobile",
                 "mobile": userPhoneNum.text ?? "00000000000",
                 "login": userProfileName.text ?? "admin",
                 "email": userMail.text ?? "admin"
@@ -96,10 +96,12 @@ class DoRegisterViewController: UIViewController {
                     let responseString = String(data: data, encoding: .utf8)
                     let charResponseString = Array(responseString!)
                     // phone - userName - Email
-                    if responseString == "000" {
+                  //  if responseString == "000" {
                         //alert
-                        DispatchQueue.main.async {
+                    if (charResponseString[10] == "0") && (charResponseString[23] == "0") && (charResponseString[33] == "0") {
                         print("you can create new account")
+                        DispatchQueue.main.async {
+                        
                             
                             let appearance = SCLAlertView.SCLAppearance(
                                 showCloseButton: false)
@@ -108,22 +110,23 @@ class DoRegisterViewController: UIViewController {
                             alertView.addButton("First Button", target:self, selector:Selector(("firstButton")))
                             alertView.showSuccess("ارسال کد", subTitle: "کد تایید برای شما ارسال شد")
                         }
-                    }else if charResponseString[0] == "1" {
+                        //10
+                    }else if charResponseString[10] == "1" {
                         //alert
                         DispatchQueue.main.async {
                              _ = SCLAlertView().showWarning("توجه", subTitle: "این شماره موبایل قبلا ثیت شده")
                         }
                        
                         print("there is phone number")
-                        
-                    }else if charResponseString[1] == "1" {
+                        //23
+                    }else if charResponseString[23] == "1" {
                         //alert
                         DispatchQueue.main.async {
                            _ = SCLAlertView().showWarning("توجه", subTitle: "این نام کاربری قبلا ثبت شده")
                         }
                         print("there is user name ")
-                        
-                    }else if charResponseString[2] == "1" {
+                        //33
+                    }else if charResponseString[33] == "1" {
                         //alert
                         DispatchQueue.main.async {
                             _ = SCLAlertView().showWarning("توجه", subTitle: "این ایمیل قبلا ثبت شده ")
