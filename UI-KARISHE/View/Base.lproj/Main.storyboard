@@ -171,7 +171,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="employerButt:" destination="LyH-OR-4es" eventType="touchUpInside" id="a8z-XC-Zeq"/>
-                                                    <segue destination="QUf-8k-Rlh" kind="show" identifier="" id="kKv-UX-ejC"/>
+                                                    <segue destination="QUf-8k-Rlh" kind="show" identifier="goForEmployer" id="Ncl-eN-rOf"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J6k-nG-W9O" userLabel="FreelancerButt">
@@ -183,6 +183,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="freelancerButt:" destination="LyH-OR-4es" eventType="touchUpInside" id="2M1-LO-Rke"/>
+                                                    <segue destination="QUf-8k-Rlh" kind="show" identifier="goForFreelancer" id="Hbc-lY-hTj"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -218,7 +219,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RJV-wf-p2c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1694.2028985507247" y="-516.03260869565224"/>
+            <point key="canvasLocation" x="1484" y="-465"/>
         </scene>
         <!--Do Register View Controller-->
         <scene sceneID="HXX-h8-xIR">
@@ -400,11 +401,12 @@
                         <outlet property="userPhoneNum" destination="u56-fM-zND" id="C2Q-aG-LNl"/>
                         <outlet property="userProfileName" destination="MRG-DX-cjU" id="2Vc-sj-pzT"/>
                         <outlet property="userVerifyPass" destination="0ct-Vr-gfj" id="MBk-Ym-h1B"/>
+                        <segue destination="ssE-jB-vKQ" kind="presentation" identifier="passdata" id="5Qw-CP-U9k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XlC-rA-Wuq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2768" y="-1048"/>
+            <point key="canvasLocation" x="2399" y="-465"/>
         </scene>
         <!--Verify Page View Controller-->
         <scene sceneID="VWO-GB-maN">
@@ -505,7 +507,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vU0-py-0uZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2767" y="-1808"/>
+            <point key="canvasLocation" x="3323" y="-465"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Uao-So-Lm6">

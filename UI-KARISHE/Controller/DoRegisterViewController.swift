@@ -21,14 +21,16 @@ class DoRegisterViewController: UIViewController {
     
     @IBOutlet weak var rulesLabel: UILabel!
     
+    var roleMainOfUser = "" //AZ VIEW CONTROLLE GHABLI BAYAD ROLE LO PASS BEDIM TOO IN CONTROLLER VA BAD OONO BEZARIM INJA
     
-    
+    var inputUserData = UserClass(therole: "", theFirst_name: "", theLast_name: "", theMobile: "", theUser_email: "", theuser_login: "", theuser_pass: "", theRepeat_pass: "", theSms_active_code: "")
     
 ////////////////////////////////////////////////////////////////////////////////////
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setUpDoRegisterViewController()
+        navigationItem.title = roleMainOfUser
     }
     
 // MARK: - SETUP VIEW/////////////////////////////////////////////////////////////////
@@ -98,6 +100,7 @@ class DoRegisterViewController: UIViewController {
                         //alert
                         DispatchQueue.main.async {
                         print("you can create new account")
+                            
                             let appearance = SCLAlertView.SCLAppearance(
                                 showCloseButton: false)
                             let alertView = SCLAlertView(appearance: appearance)
@@ -132,12 +135,34 @@ class DoRegisterViewController: UIViewController {
             }
         }
     }
-    
+////////////////////////////////////////////////////////////////////////////////////
     @objc func firstButton() {
-        
-        let secondVC = self.storyboard?.instantiateViewController(withIdentifier: "verifyPageViewController") as? verifyPageViewController
-        self.navigationController?.pushViewController(secondVC!, animated: true)
+//        let secondVC = self.storyboard?.instantiateViewController(withIdentifier: "verifyPageViewController") as? verifyPageViewController
+//        self.navigationController?.pushViewController(secondVC!, animated: true)
+       // self.nameOfUser = userFName.text ?? "default value"
+        userDataPassing()
+        performSegue(withIdentifier: "passdata", sender: self)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! verifyPageViewController
+        vc.saveUserData.role = inputUserData.role
+        vc.saveUserData.first_name = inputUserData.first_name
+        vc.saveUserData.last_name = inputUserData.last_name
+        vc.saveUserData.mobile = inputUserData.mobile
+        vc.saveUserData.user_email = inputUserData.user_email
+        vc.saveUserData.user_login = inputUserData.user_login
+        vc.saveUserData.user_pass = inputUserData.user_pass
+    }
+////////////////////////////////////////////////////////////////////////////////////
+    func userDataPassing() {
+        inputUserData.role = roleMainOfUser
+        inputUserData.first_name = userFName.text!
+        inputUserData.last_name = userLName.text!
+        inputUserData.mobile = userPhoneNum.text!
+        inputUserData.user_email = userMail.text!
+        inputUserData.user_login = userProfileName.text!
+        inputUserData.user_pass = userPassWord.text!
+        // don't pass verify user pass(same user pass and verify user pass)
     }
     //try animation alert later
-    
 }
