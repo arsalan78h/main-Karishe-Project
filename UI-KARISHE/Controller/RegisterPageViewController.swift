@@ -11,7 +11,7 @@ import UIKit
 class RegisterPageViewController: UIViewController {
 
     var roleChoosenByuser = ""
-    var roleFlag : Bool = false
+    private var roleFlag : Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,19 +22,15 @@ class RegisterPageViewController: UIViewController {
     func setupRegisterPageView() {
         
     }
-    
     //employer
     @IBAction func employerButt(_ sender: Any) {
     roleFlag = true
-        //performSegue(withIdentifier: "goForEmployer", sender: self)
-        
     }
     //freelancer
     @IBAction func freelancerButt(_ sender: Any) {
-       // performSegue(withIdentifier: "goForFreelancer", sender: self)
         roleFlag = false
-        
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if roleFlag == true {
             roleChoosenByuser = "employer"
@@ -43,8 +39,5 @@ class RegisterPageViewController: UIViewController {
         }
         let vc = segue.destination as! DoRegisterViewController
         vc.roleMainOfUser = roleChoosenByuser
-        
-        
     }
-    
 }

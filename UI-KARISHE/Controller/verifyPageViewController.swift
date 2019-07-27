@@ -14,15 +14,19 @@ class verifyPageViewController: UIViewController {
     @IBOutlet weak var returnButt: UIButton!
     
     
-    var saveUserData = UserClass(therole: "", theFirst_name: "", theLast_name: "", theMobile: "", theUser_email: "", theuser_login: "", theuser_pass: "", theRepeat_pass: "", theSms_active_code: "")
-    
+    var saveUserData = UserClassForPassData(therole: "", theFirst_name: "", theLast_name: "", theMobile: "", theUser_email: "", theuser_login: "", theuser_pass: "", theRepeat_pass: "", theSms_active_code: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupVerifyPageViewController()
         
 }
-    
+    func setupVerifyPageViewController() {
+        
+        verifyCodeTextfield.textContentType = .oneTimeCode
+        
+    }
     @IBAction func verifyCodeButt(_ sender: Any) {
 
         let url = URL(string: "https://www.karishe.com/wp-admin/admin-ajax.php")!
@@ -64,13 +68,5 @@ class verifyPageViewController: UIViewController {
         }
 
         task.resume()
-
-
-
-
-
     }
-
-
-
 }

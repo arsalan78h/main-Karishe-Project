@@ -23,27 +23,38 @@ class DoRegisterViewController: UIViewController {
     
     var roleMainOfUser = "" //AZ VIEW CONTROLLE GHABLI BAYAD ROLE LO PASS BEDIM TOO IN CONTROLLER VA BAD OONO BEZARIM INJA
     
-    var inputUserData = UserClass(therole: "", theFirst_name: "", theLast_name: "", theMobile: "", theUser_email: "", theuser_login: "", theuser_pass: "", theRepeat_pass: "", theSms_active_code: "")
+    var inputUserData = UserClassForPassData(therole: "", theFirst_name: "", theLast_name: "", theMobile: "", theUser_email: "", theuser_login: "", theuser_pass: "", theRepeat_pass: "", theSms_active_code: "")
+    
+    
+//    @IBAction func togglePassSecurity(_ sender: Any) {
+//
+//        userPassWord.isSecureTextEntry.toggle()
+//    }
     
 ////////////////////////////////////////////////////////////////////////////////////
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setUpDoRegisterViewController()
-        navigationItem.title = roleMainOfUser
     }
     
 // MARK: - SETUP VIEW/////////////////////////////////////////////////////////////////
    func setUpDoRegisterViewController() {
     
-    let arrayOfTextField = [1 : userFName,2 : userLName,3 : userPhoneNum,4  :userPhoneNum,5 : userMail,6 : userProfileName,7 : userPassWord,8 : userVerifyPass]
+    navigationItem.title = roleMainOfUser
     
-    for (_,value) in arrayOfTextField {
+    let dictionaryOfTextField = [1 : userFName,2 : userLName,3 : userPhoneNum,4  :userPhoneNum,5 : userMail,6 : userProfileName,7 : userPassWord,8 : userVerifyPass]
+    for (_,value) in dictionaryOfTextField {
         linerTF(newTextField: value!)
     }
     
+    userPassWord.textContentType = .password
+    userVerifyPass.textContentType = .newPassword
+    userMail.keyboardType = .emailAddress
+    
+    
 }
-    func linerTF(newTextField : UITextField) {
+   fileprivate func linerTF(newTextField : UITextField) {
         let newLayer = CALayer()
         newLayer.frame = CGRect(x: 0, y: newTextField.frame.height , width: newTextField.frame.width , height: 2)
         
@@ -157,7 +168,7 @@ class DoRegisterViewController: UIViewController {
         vc.saveUserData.user_pass = inputUserData.user_pass
     }
 ////////////////////////////////////////////////////////////////////////////////////
-    func userDataPassing() {
+   fileprivate func userDataPassing() {
         inputUserData.role = roleMainOfUser
         inputUserData.first_name = userFName.text!
         inputUserData.last_name = userLName.text!
