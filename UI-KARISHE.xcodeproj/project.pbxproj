@@ -20,6 +20,8 @@
 		84DF014622E4498B00D9A06C /* RegisterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DF014522E4498B00D9A06C /* RegisterPageViewController.swift */; };
 		84DF014822E44F6F00D9A06C /* DoRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DF014722E44F6F00D9A06C /* DoRegisterViewController.swift */; };
 		84F6405422E6EF8700AA65F5 /* UserClassForPassData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6405322E6EF8700AA65F5 /* UserClassForPassData.swift */; };
+		84FB3E3822ED7BD4006F2A31 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FB3E3722ED7BD4006F2A31 /* LogInViewController.swift */; };
+		84FB3E3A22ED8CAF006F2A31 /* ForgotPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FB3E3922ED8CAF006F2A31 /* ForgotPassViewController.swift */; };
 		EB2EC6ACE86082DB1AABE726 /* Pods_UI_KARISHE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A85BCBDA6B431906F774058 /* Pods_UI_KARISHE.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +44,8 @@
 		84DF014522E4498B00D9A06C /* RegisterPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageViewController.swift; sourceTree = "<group>"; };
 		84DF014722E44F6F00D9A06C /* DoRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoRegisterViewController.swift; sourceTree = "<group>"; };
 		84F6405322E6EF8700AA65F5 /* UserClassForPassData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserClassForPassData.swift; sourceTree = "<group>"; };
+		84FB3E3722ED7BD4006F2A31 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		84FB3E3922ED8CAF006F2A31 /* ForgotPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				84DF014522E4498B00D9A06C /* RegisterPageViewController.swift */,
 				84DF014722E44F6F00D9A06C /* DoRegisterViewController.swift */,
 				84AB5C0522E5D52F00A0F741 /* verifyPageViewController.swift */,
+				84FB3E3722ED7BD4006F2A31 /* LogInViewController.swift */,
+				84FB3E3922ED8CAF006F2A31 /* ForgotPassViewController.swift */,
 				8431B0E022E43D7800C0A45B /* CustomCells */,
 			);
 			path = Controller;
@@ -282,11 +288,13 @@
 			files = (
 				84AB5C0622E5D52F00A0F741 /* verifyPageViewController.swift in Sources */,
 				84BDE28C22E4DF2800287E27 /* SCLExtensions.swift in Sources */,
+				84FB3E3822ED7BD4006F2A31 /* LogInViewController.swift in Sources */,
 				84C9F8DF22E48E0700DB3367 /* extentions.swift in Sources */,
 				84DF014622E4498B00D9A06C /* RegisterPageViewController.swift in Sources */,
 				84A2C18B22E32DC30026DB83 /* CVAuthPageCustomCell.swift in Sources */,
 				84F6405422E6EF8700AA65F5 /* UserClassForPassData.swift in Sources */,
 				84DF014822E44F6F00D9A06C /* DoRegisterViewController.swift in Sources */,
+				84FB3E3A22ED8CAF006F2A31 /* ForgotPassViewController.swift in Sources */,
 				84A2C17B22E322160026DB83 /* introViewController.swift in Sources */,
 				84BDE28B22E4DF2800287E27 /* SCLAlertView.swift in Sources */,
 				84A2C17922E322160026DB83 /* AppDelegate.swift in Sources */,
