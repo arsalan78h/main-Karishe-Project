@@ -65,8 +65,37 @@ class verifyPageViewController: UIViewController {
 
             let responseString = String(data: data, encoding: .utf8)
             print("responseString = \(String(describing: responseString))")
+            
+            _ = String(data: data, encoding: .utf8)
+            print("responseString = \(String(describing: responseString))")
+            let charResponseString = Array(responseString!)
+            
+            if charResponseString[11] == "f" {
+                DispatchQueue.main.async {
+//                    _ = SCLAlertView().showError("مشکل در اطلاعات وارد شده", subTitle:"لطفاهمه اطلاعات را وارد کنید", closeButtonTitle:"تایید")
+                    _ = SCLAlertView().showError("کد وارد شده اشتباه است")
+                }
+            }else{
+                DispatchQueue.main.async {
+                    let appearance = SCLAlertView.SCLAppearance(
+                        showCloseButton: false)
+                    let alertView = SCLAlertView(appearance: appearance)
+                    alertView.addButton("ورود", target:self, selector:Selector(("enterButt")))
+                    alertView.showSuccess("ارسال کد", subTitle:"ثبت نام باموفقیت انجام شد")
+                }
+            }
         }
-
         task.resume()
     }
+//    @objc func enterButt() {
+//        let nextVc = self.storyboard?.instantiateViewController(withIdentifier: "LogInViewControllerID") as! LogInViewController
+//        self.navigationController?.pushViewController(nextVc, animated: true)
+//    }
 }
+
+
+
+
+
+
+

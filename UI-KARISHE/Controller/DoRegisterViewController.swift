@@ -48,8 +48,6 @@ class DoRegisterViewController: UIViewController {
         linerTF(newTextField: value!)
     }
     
-    userPassWord.textContentType = .password
-    userVerifyPass.textContentType = .newPassword
     userMail.keyboardType = .emailAddress
     
     
@@ -151,11 +149,9 @@ class DoRegisterViewController: UIViewController {
     }
 ////////////////////////////////////////////////////////////////////////////////////
     @objc func firstButton() {
-//        let secondVC = self.storyboard?.instantiateViewController(withIdentifier: "verifyPageViewController") as? verifyPageViewController
-//        self.navigationController?.pushViewController(secondVC!, animated: true)
-       // self.nameOfUser = userFName.text ?? "default value"
         userDataPassing()
-        performSegue(withIdentifier: "passdata", sender: self)
+        let nextVc = self.storyboard?.instantiateViewController(withIdentifier: "verifyPageViewController") as! verifyPageViewController
+        self.navigationController?.pushViewController(nextVc, animated: true)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! verifyPageViewController

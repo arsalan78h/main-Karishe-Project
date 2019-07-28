@@ -125,25 +125,25 @@
         <!--Log In View Controller-->
         <scene sceneID="e3Q-jq-KNO">
             <objects>
-                <viewController id="LWZ-4L-Dmq" customClass="LogInViewController" customModule="UI_KARISHE" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LogInViewControllerID" id="LWZ-4L-Dmq" customClass="LogInViewController" customModule="UI_KARISHE" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jaq-Ch-thn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jSi-Fn-tto" userLabel="center Stack View">
-                                <rect key="frame" x="24.333333333333343" y="371.33333333333337" width="365.33333333333326" height="97"/>
+                                <rect key="frame" x="24.333333333333343" y="321" width="365.33333333333326" height="94"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="dbf-KA-Pbg" userLabel="textField Stack View">
-                                        <rect key="frame" x="0.0" y="0.0" width="323.33333333333331" height="97"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="323.33333333333331" height="94"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="تلفن یا پست الکترونیک                                  " textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kDH-IZ-zZt">
-                                                <rect key="frame" x="0.0" y="0.0" width="323.33333333333331" height="33.333333333333336"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="323.33333333333331" height="32"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="رمز عبور" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zp0-BU-zOZ">
-                                                <rect key="frame" x="0.0" y="63.333333333333314" width="323.33333333333331" height="33.666666666666657"/>
+                                                <rect key="frame" x="0.0" y="62" width="323.33333333333331" height="32"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -160,13 +160,13 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="mgp-1Z-8Kt" userLabel="images Stack View">
-                                        <rect key="frame" x="333.33333333333337" y="0.0" width="32" height="97"/>
+                                        <rect key="frame" x="333.33333333333337" y="0.0" width="32" height="94"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone" translatesAutoresizingMaskIntoConstraints="NO" id="LzQ-YH-hdW">
-                                                <rect key="frame" x="0.0" y="0.0" width="32" height="33.333333333333336"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="verifypass" translatesAutoresizingMaskIntoConstraints="NO" id="nS0-Hi-Imh">
-                                                <rect key="frame" x="0.0" y="63.333333333333314" width="32" height="33.666666666666657"/>
+                                                <rect key="frame" x="0.0" y="62" width="32" height="32"/>
                                             </imageView>
                                         </subviews>
                                         <constraints>
@@ -190,10 +190,10 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="jHr-91-N5x" userLabel="bottom stack View">
-                                <rect key="frame" x="25" y="495.33333333333337" width="364" height="244"/>
+                                <rect key="frame" x="25" y="442" width="364" height="274"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cbn-ZS-hpA">
-                                        <rect key="frame" x="0.0" y="0.0" width="364" height="61"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="364" height="68.333333333333329"/>
                                         <color key="backgroundColor" red="0.0" green="0.20000000000000001" blue="0.30588235289999999" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <inset key="contentEdgeInsets" minX="0.0" minY="20" maxX="0.0" maxY="20"/>
@@ -205,13 +205,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="یا                                                                               " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCq-tp-G95">
-                                        <rect key="frame" x="0.0" y="60.999999999999943" width="364" height="61"/>
+                                        <rect key="frame" x="0.0" y="68.333333333333314" width="364" height="68.666666666666686"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="keT-Wr-yXd">
-                                        <rect key="frame" x="0.0" y="121.99999999999994" width="364" height="61"/>
+                                        <rect key="frame" x="0.0" y="137" width="364" height="68.666666666666686"/>
                                         <color key="backgroundColor" red="0.0" green="0.20000000000000001" blue="0.30588235289999999" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <inset key="contentEdgeInsets" minX="0.0" minY="20" maxX="0.0" maxY="20"/>
@@ -223,7 +223,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BXC-84-gwg">
-                                        <rect key="frame" x="0.0" y="182.99999999999994" width="364" height="61"/>
+                                        <rect key="frame" x="0.0" y="205.66666666666663" width="364" height="68.333333333333314"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="رمز عبورم را فراموش کرده ام!">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -250,7 +250,7 @@
                                 </constraints>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoKarishe" translatesAutoresizingMaskIntoConstraints="NO" id="pJo-cb-Fxy">
-                                <rect key="frame" x="107" y="116.00000000000001" width="200" height="206.33333333333337"/>
+                                <rect key="frame" x="107" y="72" width="200" height="200"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -267,7 +267,6 @@
                             <constraint firstItem="pJo-cb-Fxy" firstAttribute="height" secondItem="Jaq-Ch-thn" secondAttribute="height" multiplier="0.2717" id="kTc-AA-dJ4"/>
                             <constraint firstItem="pJo-cb-Fxy" firstAttribute="width" secondItem="Jaq-Ch-thn" secondAttribute="width" multiplier="0.483" id="n94-MR-Y7r"/>
                             <constraint firstItem="L4q-Cc-dyT" firstAttribute="bottom" secondItem="jHr-91-N5x" secondAttribute="bottom" constant="20" id="qM3-XJ-qdL"/>
-                            <constraint firstItem="pJo-cb-Fxy" firstAttribute="top" secondItem="L4q-Cc-dyT" secondAttribute="top" constant="52" id="tsG-nW-cHi"/>
                             <constraint firstItem="jHr-91-N5x" firstAttribute="centerX" secondItem="Jaq-Ch-thn" secondAttribute="centerX" id="x5z-Qh-ix4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="L4q-Cc-dyT"/>
@@ -471,7 +470,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="bpe-p3-h8m" userLabel="main Stack View">
-                                <rect key="frame" x="19.666666666666657" y="57.333333333333314" width="374.66666666666674" height="621.33333333333348"/>
+                                <rect key="frame" x="19.666666666666657" y="76.333333333333314" width="374.66666666666674" height="583.33333333333348"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="49" translatesAutoresizingMaskIntoConstraints="NO" id="KAC-1H-gr6" userLabel="Text Field Stack View">
                                         <rect key="frame" x="0.0" y="0.0" width="322.66666666666669" height="583"/>
@@ -483,7 +482,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="نام خانوادگی" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Mh-qI-CDF" userLabel="family Text Field">
-                                                <rect key="frame" x="0.0" y="79" width="322.66666666666669" height="30"/>
+                                                <rect key="frame" x="0.0" y="79.000000000000014" width="322.66666666666669" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -492,13 +491,13 @@
                                                 <rect key="frame" x="0.0" y="158" width="322.66666666666669" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ایمیل" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="36y-eC-6A5" userLabel="email Text Field">
-                                                <rect key="frame" x="0.0" y="236.99999999999997" width="322.66666666666669" height="30.000000000000028"/>
+                                                <rect key="frame" x="0.0" y="237" width="322.66666666666669" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="نام کاربری" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MRG-DX-cjU" userLabel="username Text Field">
                                                 <rect key="frame" x="0.0" y="316" width="322.66666666666669" height="30"/>
@@ -510,13 +509,13 @@
                                                 <rect key="frame" x="0.0" y="395" width="322.66666666666669" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="تایید رمز عبور" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0ct-Vr-gfj" userLabel="verify passWorld Text Field">
                                                 <rect key="frame" x="0.0" y="474.00000000000006" width="322.66666666666669" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="قوانین و مقررات                                                 " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IfE-C4-m3U">
                                                 <rect key="frame" x="0.0" y="553" width="322.66666666666669" height="30"/>
@@ -560,13 +559,13 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="family" translatesAutoresizingMaskIntoConstraints="NO" id="ho7-6w-nNe">
-                                                <rect key="frame" x="0.0" y="79" width="32" height="32"/>
+                                                <rect key="frame" x="0.0" y="79.000000000000014" width="32" height="32"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone" translatesAutoresizingMaskIntoConstraints="NO" id="jty-iZ-b2m">
                                                 <rect key="frame" x="0.0" y="158" width="32" height="32"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email" translatesAutoresizingMaskIntoConstraints="NO" id="iaT-a2-hE9">
-                                                <rect key="frame" x="0.0" y="236.99999999999997" width="32" height="32.000000000000028"/>
+                                                <rect key="frame" x="0.0" y="237" width="32" height="32"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="ug3-NZ-una">
                                                 <rect key="frame" x="0.0" y="316" width="32" height="32"/>
@@ -610,7 +609,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fGo-Z0-1EV" userLabel="Register Button">
-                                <rect key="frame" x="20" y="698.66666666666663" width="374" height="34"/>
+                                <rect key="frame" x="20" y="679.66666666666663" width="374" height="34"/>
                                 <color key="backgroundColor" red="0.0" green="0.20000000000000001" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <state key="normal" title="دریافت کد تایید">
@@ -642,7 +641,6 @@
                         <outlet property="userPhoneNum" destination="u56-fM-zND" id="C2Q-aG-LNl"/>
                         <outlet property="userProfileName" destination="MRG-DX-cjU" id="2Vc-sj-pzT"/>
                         <outlet property="userVerifyPass" destination="0ct-Vr-gfj" id="MBk-Ym-h1B"/>
-                        <segue destination="ssE-jB-vKQ" kind="presentation" identifier="passdata" id="5Qw-CP-U9k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XlC-rA-Wuq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -652,7 +650,7 @@
         <!--Verify Page View Controller-->
         <scene sceneID="VWO-GB-maN">
             <objects>
-                <viewController restorationIdentifier="verifyPageViewController" storyboardIdentifier="verifyPageViewController" id="ssE-jB-vKQ" customClass="verifyPageViewController" customModule="UI_KARISHE" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="verifyPageViewController" id="ssE-jB-vKQ" customClass="verifyPageViewController" customModule="UI_KARISHE" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YhL-0U-KZS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -661,22 +659,22 @@
                                 <rect key="frame" x="14.333333333333343" y="150" width="385.33333333333326" height="436"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="کد تایید برای شماره شما ارسال گردید:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gpo-Lj-Dpp">
-                                        <rect key="frame" x="0.0" y="0.0" width="385.33333333333331" height="64"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="385.33333333333331" height="105.33333333333333"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mXu-G2-xCM" userLabel="text Stack View">
-                                        <rect key="frame" x="0.0" y="124" width="385.33333333333331" height="64"/>
+                                        <rect key="frame" x="0.0" y="165.33333333333331" width="385.33333333333331" height="105.33333333333331"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="کد ۶ رقمی ارسال شده را وارد کنید        " textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o3R-C9-thi">
-                                                <rect key="frame" x="0.0" y="0.0" width="311.66666666666669" height="64"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="311.66666666666669" height="105.33333333333333"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sms2" translatesAutoresizingMaskIntoConstraints="NO" id="96j-vJ-is0">
-                                                <rect key="frame" x="321.66666666666669" y="0.0" width="63.666666666666686" height="64"/>
+                                                <rect key="frame" x="321.66666666666669" y="0.0" width="63.666666666666686" height="105.33333333333333"/>
                                             </imageView>
                                         </subviews>
                                         <constraints>
@@ -691,7 +689,7 @@
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GsM-9C-q5b">
-                                        <rect key="frame" x="0.0" y="248" width="385.33333333333331" height="64"/>
+                                        <rect key="frame" x="0.0" y="330.66666666666669" width="385.33333333333331" height="105.33333333333331"/>
                                         <color key="backgroundColor" red="0.0" green="0.20000000000000001" blue="0.30588235294117649" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <inset key="contentEdgeInsets" minX="0.0" minY="20" maxX="0.0" maxY="20"/>
@@ -702,32 +700,16 @@
                                             <action selector="verifyCodeButt:" destination="ssE-jB-vKQ" eventType="touchUpInside" id="sGm-DH-rGQ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IJg-x6-bch">
-                                        <rect key="frame" x="0.0" y="372" width="385.33333333333331" height="64"/>
-                                        <color key="backgroundColor" red="0.0" green="0.20000000000000001" blue="0.30588235289999999" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <inset key="contentEdgeInsets" minX="0.0" minY="20" maxX="0.0" maxY="20"/>
-                                        <state key="normal" title="بازگشت به مرحله قبل">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="QUf-8k-Rlh" kind="show" id="HTv-ey-BDv"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="GsM-9C-q5b" firstAttribute="leading" secondItem="Eas-QS-6v5" secondAttribute="leading" id="8Aw-sx-Zgs"/>
-                                    <constraint firstItem="IJg-x6-bch" firstAttribute="height" secondItem="Gpo-Lj-Dpp" secondAttribute="height" id="Ahd-N7-GnE"/>
                                     <constraint firstAttribute="trailing" secondItem="mXu-G2-xCM" secondAttribute="trailing" id="MhE-ig-EKj"/>
                                     <constraint firstAttribute="trailing" secondItem="Gpo-Lj-Dpp" secondAttribute="trailing" id="W19-e8-rGU"/>
                                     <constraint firstItem="Gpo-Lj-Dpp" firstAttribute="top" secondItem="Eas-QS-6v5" secondAttribute="top" id="Ywf-K2-vi7"/>
-                                    <constraint firstAttribute="trailing" secondItem="IJg-x6-bch" secondAttribute="trailing" id="aVH-vE-i4e"/>
                                     <constraint firstItem="mXu-G2-xCM" firstAttribute="height" secondItem="Gpo-Lj-Dpp" secondAttribute="height" id="amB-8I-44P"/>
-                                    <constraint firstItem="IJg-x6-bch" firstAttribute="leading" secondItem="Eas-QS-6v5" secondAttribute="leading" id="fT4-52-V2s"/>
                                     <constraint firstItem="Gpo-Lj-Dpp" firstAttribute="leading" secondItem="Eas-QS-6v5" secondAttribute="leading" id="lxx-st-AP6"/>
                                     <constraint firstAttribute="trailing" secondItem="GsM-9C-q5b" secondAttribute="trailing" id="rt3-LA-Wbm"/>
                                     <constraint firstItem="GsM-9C-q5b" firstAttribute="height" secondItem="Gpo-Lj-Dpp" secondAttribute="height" id="rxw-LO-0S1"/>
-                                    <constraint firstAttribute="bottom" secondItem="IJg-x6-bch" secondAttribute="bottom" id="szG-lk-a4e"/>
                                     <constraint firstItem="mXu-G2-xCM" firstAttribute="leading" secondItem="Eas-QS-6v5" secondAttribute="leading" id="zTQ-EO-fqi"/>
                                 </constraints>
                             </stackView>
@@ -742,13 +724,12 @@
                         <viewLayoutGuide key="safeArea" id="uin-FF-Z2a" userLabel="text Safe Area"/>
                     </view>
                     <connections>
-                        <outlet property="returnButt" destination="IJg-x6-bch" id="vra-ww-aVW"/>
                         <outlet property="verifyCodeTextfield" destination="o3R-C9-thi" id="UuX-pt-DRt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vU0-py-0uZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3323" y="-465"/>
+            <point key="canvasLocation" x="3103" y="-465"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Uao-So-Lm6">
@@ -781,7 +762,7 @@
         <image name="verifypass" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="HTv-ey-BDv"/>
+        <segue reference="Hbc-lY-hTj"/>
         <segue reference="FjY-qw-Rmq"/>
     </inferredMetricsTieBreakers>
 </document>
