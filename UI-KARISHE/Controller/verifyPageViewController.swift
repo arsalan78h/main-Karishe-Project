@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SCLAlertView
 
 class verifyPageViewController: UIViewController {
    
@@ -73,7 +74,7 @@ class verifyPageViewController: UIViewController {
             if charResponseString[11] == "f" {
                 DispatchQueue.main.async {
 //                    _ = SCLAlertView().showError("مشکل در اطلاعات وارد شده", subTitle:"لطفاهمه اطلاعات را وارد کنید", closeButtonTitle:"تایید")
-                    _ = SCLAlertView().showError("کد وارد شده اشتباه است")
+                    _ = SCLAlertView().showError("کد وارد شده اشتباه است", subTitle: "")
                 }
             }else{
                 DispatchQueue.main.async {

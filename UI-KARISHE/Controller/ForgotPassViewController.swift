@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SCLAlertView
 
 class ForgotPassViewController: UIViewController {
 
@@ -57,7 +58,7 @@ class ForgotPassViewController: UIViewController {
                 }
             }else {
                     DispatchQueue.main.async {
-                        _ = SCLAlertView().showSuccess("ایمیل یا شماره وارد شده را برسی کنید")
+                        _ = SCLAlertView().showSuccess("ایمیل یا شماره وارد شده را برسی کنید", subTitle: "")
                 }
             }
         }

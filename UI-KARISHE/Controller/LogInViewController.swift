@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SwiftKeychainWrapper
+import SCLAlertView
 
 class LogInViewController: UIViewController {
     
@@ -69,49 +71,16 @@ class LogInViewController: UIViewController {
                 } else {
                     //alert
                     self.removeActivityIndicator(activityIndicator: myActivityIndicator)
-                    print("user name or password is wrong-please try again later")
+                    SCLAlertView().showError("اطلاعات وارد شده نادرست است! ", subTitle: "لطفا دوباره سعی کنید")
                 }
-            }
-//            guard let data = data,
-//                let response = response as? HTTPURLResponse,
-//                error == nil else {                                              // check for fundamental networking error
-//                    print("error", error ?? "Unknown error")
-//                    return
-            }
-            task.resume()
-            
-//            guard (200 ... 299) ~= response.statusCode else {                    // check for http errors
-//                print("statusCode should be 2xx, but is \(response.statusCode)")
-//                print("response = \(response)")
-//                return
-//            }
-//            let responseString = String(data: data, encoding: .utf8)
-//            print("responseString = \(String(describing: responseString))")
-//            print("---------------------------------------------------------")
-//
-//            let charResponseString = Array(responseString!)
-        
-//            if charResponseString[11] == "f" {
-//                print("username or passWord is wrong")
-//                self.removeActivityIndicator(activityIndicator: myActivityIndicator)
-//            } else {
-//                self.checkToken()
-//                print("remove activityyyyyyy")
-//                self.removeActivityIndicator(activityIndicator: myActivityIndicator)
-//            }
-        }
-    
-    
-    
-    func removeActivityIndicator(activityIndicator: UIActivityIndicatorView)
-    {
-        DispatchQueue.main.async
-            {
-                activityIndicator.stopAnimating()
-                activityIndicator.removeFromSuperview()
+            } else {
+                SCLAlertView().showError("خطا در ارتباط یا سیستم", subTitle: "لطفا دوباره سعی کنید")
         }
     }
+            task.resume()
+}
     
+////////////////////////////////////////////////////////////////////////////////////////
     func checkToken(){
         
         let url = URL(string: "http://www.karishe.ir/wp-json/aam/v1/authenticate")!
@@ -124,40 +93,60 @@ class LogInViewController: UIViewController {
         ]
         request.httpBody = parameters.percentEscaped().data(using: .utf8)
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            
             if let data = data {
-                
                 let user = try? JSONDecoder().decode(TokenClass.self, from: data)
                 
-              //  print(user ?? "default value")
                 print("-------------------------------")
                 print(user?.token ?? "admin")
-            }
                 
-            
-//                let response = response as? HTTPURLResponse,
-//                error == nil else {                                              // check for fundamental networking error
-//                    print("error", error ?? "Unknown error")
-//                    return
-//            }
-            
-//            guard (200 ... 299) ~= response.statusCode else {                    // check for http errors
-//                print("statusCode should be 2xx, but is \(response.statusCode)")
-//                print("response = \(response)")
-//                return
-//            }
-            
-//            let responseString = String(data: data, encoding: .utf8)
-//            print("responseString = \(String(describing: responseString))")
-           // let charResponseString = Array(responseString!)
-            
-            
+                let accessToken = user?.token
+                if (accessToken?.isEmpty)! {
+                    SCLAlertView().showError("خطا در ارتباط یا سیستم", subTitle: "لطفا دوباره سعی کنید")
+                } else {
+                    let saveAccesssToken: Bool = KeychainWrapper.standard.set(accessToken!, forKey: "accessToken")
+                    if saveAccesssToken {
+                        self.goToHomePage()
+                        
+                    }else{
+                        SCLAlertView().showError("خطا در ارتباط یا سیستم", subTitle: "لطفا دوباره سعی کنید")
+                    }
+                }
+            }
         }
-        task.resume()
-        
-        
-        
-    }
-    
-
-
+    task.resume()
 }
+////////////////////////////////////////////////////////////////////////////////////////
+    
+   func goToHomePage() {
+    
+    DispatchQueue.main.async
+        {
+            let homePage = self.storyboard?.instantiateViewController(withIdentifier: "mainNavigationBar") as! mainNavigationBar
+            let appDelegate = UIApplication.shared.delegate
+            appDelegate?.window??.rootViewController = homePage
+    }
+}
+    
+//////////////////////////////////////////////////////////////////////////////////////
+    func removeActivityIndicator(activityIndicator: UIActivityIndicatorView)
+    {
+        DispatchQueue.main.async
+            {
+                activityIndicator.stopAnimating()
+                activityIndicator.removeFromSuperview()
+        }
+    }
+
+    
+    
+    
+    
+}
+
+
+
+
+
+//let accessToken: String? = KeychainWrapper.standard.string(forKey: "accessToken")
+//request.addValue("Bearer \(accessToken!)", forHTTPHeaderField: "Authorization")

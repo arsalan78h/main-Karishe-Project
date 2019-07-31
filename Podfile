@@ -5,6 +5,10 @@ target 'UI-KARISHE' do
   use_frameworks!
 
   # Pods for UI-KARISHE
-pod 'SCLAlertView'
+
+ pod 'SwiftKeychainWrapper', '~> 3.4'
+
+pod 'SCLAlertView', '~> 0.8'
+
 
 end

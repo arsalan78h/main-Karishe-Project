@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8424D81122F190E400003B48 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8424D81022F190E400003B48 /* HomePageViewController.swift */; };
+		8424D81522F1962100003B48 /* mainNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8424D81422F1962100003B48 /* mainNavigationBar.swift */; };
 		84A2C17922E322160026DB83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2C17822E322160026DB83 /* AppDelegate.swift */; };
 		84A2C17B22E322160026DB83 /* introViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2C17A22E322160026DB83 /* introViewController.swift */; };
 		84A2C17E22E322160026DB83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A2C17C22E322160026DB83 /* Main.storyboard */; };
@@ -14,8 +16,6 @@
 		84A2C18322E322180026DB83 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A2C18122E322180026DB83 /* LaunchScreen.storyboard */; };
 		84A2C18B22E32DC30026DB83 /* CVAuthPageCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2C18A22E32DC30026DB83 /* CVAuthPageCustomCell.swift */; };
 		84AB5C0622E5D52F00A0F741 /* verifyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AB5C0522E5D52F00A0F741 /* verifyPageViewController.swift */; };
-		84BDE28B22E4DF2800287E27 /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BDE28922E4DF2800287E27 /* SCLAlertView.swift */; };
-		84BDE28C22E4DF2800287E27 /* SCLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BDE28A22E4DF2800287E27 /* SCLExtensions.swift */; };
 		84C9F8DF22E48E0700DB3367 /* extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C9F8DE22E48E0700DB3367 /* extentions.swift */; };
 		84DF014622E4498B00D9A06C /* RegisterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DF014522E4498B00D9A06C /* RegisterPageViewController.swift */; };
 		84DF014822E44F6F00D9A06C /* DoRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DF014722E44F6F00D9A06C /* DoRegisterViewController.swift */; };
@@ -23,7 +23,7 @@
 		84FB3E3822ED7BD4006F2A31 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FB3E3722ED7BD4006F2A31 /* LogInViewController.swift */; };
 		84FB3E3A22ED8CAF006F2A31 /* ForgotPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FB3E3922ED8CAF006F2A31 /* ForgotPassViewController.swift */; };
 		84FDDCF522F0319400EF203E /* TokenServiceClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FDDCF422F0319400EF203E /* TokenServiceClass.swift */; };
-		84FDDCF722F04DAE00EF203E /* LoginServiceClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FDDCF622F04DAE00EF203E /* LoginServiceClass.swift */; };
+		84FE22B422F179DA006E6F2F /* LoginServiceClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FE22B322F179DA006E6F2F /* LoginServiceClass.swift */; };
 		EB2EC6ACE86082DB1AABE726 /* Pods_UI_KARISHE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A85BCBDA6B431906F774058 /* Pods_UI_KARISHE.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +31,8 @@
 		3F7806838099B0F347E87AAF /* Pods-UI-KARISHE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UI-KARISHE.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UI-KARISHE/Pods-UI-KARISHE.debug.xcconfig"; sourceTree = "<group>"; };
 		7A85BCBDA6B431906F774058 /* Pods_UI_KARISHE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UI_KARISHE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B619DDEFE701AA784B11C1A /* Pods-UI-KARISHE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UI-KARISHE.release.xcconfig"; path = "Pods/Target Support Files/Pods-UI-KARISHE/Pods-UI-KARISHE.release.xcconfig"; sourceTree = "<group>"; };
+		8424D81022F190E400003B48 /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
+		8424D81422F1962100003B48 /* mainNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainNavigationBar.swift; sourceTree = "<group>"; };
 		84A2C17522E322160026DB83 /* UI-KARISHE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UI-KARISHE.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A2C17822E322160026DB83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84A2C17A22E322160026DB83 /* introViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = introViewController.swift; sourceTree = "<group>"; };
@@ -40,8 +42,6 @@
 		84A2C18422E322180026DB83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84A2C18A22E32DC30026DB83 /* CVAuthPageCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVAuthPageCustomCell.swift; sourceTree = "<group>"; };
 		84AB5C0522E5D52F00A0F741 /* verifyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = verifyPageViewController.swift; sourceTree = "<group>"; };
-		84BDE28922E4DF2800287E27 /* SCLAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLAlertView.swift; sourceTree = "<group>"; };
-		84BDE28A22E4DF2800287E27 /* SCLExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLExtensions.swift; sourceTree = "<group>"; };
 		84C9F8DE22E48E0700DB3367 /* extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extentions.swift; sourceTree = "<group>"; };
 		84DF014522E4498B00D9A06C /* RegisterPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageViewController.swift; sourceTree = "<group>"; };
 		84DF014722E44F6F00D9A06C /* DoRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoRegisterViewController.swift; sourceTree = "<group>"; };
@@ -49,7 +49,7 @@
 		84FB3E3722ED7BD4006F2A31 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		84FB3E3922ED8CAF006F2A31 /* ForgotPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassViewController.swift; sourceTree = "<group>"; };
 		84FDDCF422F0319400EF203E /* TokenServiceClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenServiceClass.swift; sourceTree = "<group>"; };
-		84FDDCF622F04DAE00EF203E /* LoginServiceClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginServiceClass.swift; sourceTree = "<group>"; };
+		84FE22B322F179DA006E6F2F /* LoginServiceClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginServiceClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +73,9 @@
 				84AB5C0522E5D52F00A0F741 /* verifyPageViewController.swift */,
 				84FB3E3722ED7BD4006F2A31 /* LogInViewController.swift */,
 				84FB3E3922ED8CAF006F2A31 /* ForgotPassViewController.swift */,
+				8424D81022F190E400003B48 /* HomePageViewController.swift */,
 				8431B0E022E43D7800C0A45B /* CustomCells */,
+				8424D81422F1962100003B48 /* mainNavigationBar.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -99,7 +101,6 @@
 			isa = PBXGroup;
 			children = (
 				84FDDCF322F0316C00EF203E /* JSON Classes */,
-				84F6405222E6EF5E00AA65F5 /* SCLAlert */,
 				84C9F8DD22E48DED00DB3367 /* Extentions */,
 				84F6405322E6EF8700AA65F5 /* UserClassForPassData.swift */,
 			);
@@ -145,20 +146,11 @@
 			path = Extentions;
 			sourceTree = "<group>";
 		};
-		84F6405222E6EF5E00AA65F5 /* SCLAlert */ = {
-			isa = PBXGroup;
-			children = (
-				84BDE28922E4DF2800287E27 /* SCLAlertView.swift */,
-				84BDE28A22E4DF2800287E27 /* SCLExtensions.swift */,
-			);
-			path = SCLAlert;
-			sourceTree = "<group>";
-		};
 		84FDDCF322F0316C00EF203E /* JSON Classes */ = {
 			isa = PBXGroup;
 			children = (
 				84FDDCF422F0319400EF203E /* TokenServiceClass.swift */,
-				84FDDCF622F04DAE00EF203E /* LoginServiceClass.swift */,
+				84FE22B322F179DA006E6F2F /* LoginServiceClass.swift */,
 			);
 			path = "JSON Classes";
 			sourceTree = "<group>";
@@ -281,12 +273,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-UI-KARISHE/Pods-UI-KARISHE-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -301,18 +295,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				84AB5C0622E5D52F00A0F741 /* verifyPageViewController.swift in Sources */,
-				84BDE28C22E4DF2800287E27 /* SCLExtensions.swift in Sources */,
 				84FB3E3822ED7BD4006F2A31 /* LogInViewController.swift in Sources */,
 				84C9F8DF22E48E0700DB3367 /* extentions.swift in Sources */,
 				84FDDCF522F0319400EF203E /* TokenServiceClass.swift in Sources */,
 				84DF014622E4498B00D9A06C /* RegisterPageViewController.swift in Sources */,
 				84A2C18B22E32DC30026DB83 /* CVAuthPageCustomCell.swift in Sources */,
 				84F6405422E6EF8700AA65F5 /* UserClassForPassData.swift in Sources */,
+				8424D81122F190E400003B48 /* HomePageViewController.swift in Sources */,
 				84DF014822E44F6F00D9A06C /* DoRegisterViewController.swift in Sources */,
 				84FB3E3A22ED8CAF006F2A31 /* ForgotPassViewController.swift in Sources */,
-				84FDDCF722F04DAE00EF203E /* LoginServiceClass.swift in Sources */,
+				84FE22B422F179DA006E6F2F /* LoginServiceClass.swift in Sources */,
+				8424D81522F1962100003B48 /* mainNavigationBar.swift in Sources */,
 				84A2C17B22E322160026DB83 /* introViewController.swift in Sources */,
-				84BDE28B22E4DF2800287E27 /* SCLAlertView.swift in Sources */,
 				84A2C17922E322160026DB83 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
