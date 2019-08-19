@@ -63,8 +63,6 @@ class ForgotPassViewController: UIViewController {
             }
         }
         task.resume()
-        
-        
     }
     
     

@@ -117,7 +117,7 @@ class DoRegisterViewController: UIViewController {
                                 showCloseButton: false)
                             let alertView = SCLAlertView(appearance: appearance)
                             alertView.showSuccess("No button", subTitle: "create no butt success alert")
-                            alertView.addButton("First Button", target:self, selector:Selector(("firstButton")))
+                            alertView.addButton("تایید", target:self, selector:Selector(("goToVerifyCodeVC")))
                             alertView.showSuccess("ارسال کد", subTitle: "کد تایید برای شما ارسال شد")
                         }
                         //10
@@ -149,7 +149,7 @@ class DoRegisterViewController: UIViewController {
         }
     }
 ////////////////////////////////////////////////////////////////////////////////////
-    @objc func firstButton() {
+    @objc func goToVerifyCodeVC() {
         userDataPassing()
         let nextVc = self.storyboard?.instantiateViewController(withIdentifier: "verifyPageViewController") as! verifyPageViewController
         self.navigationController?.pushViewController(nextVc, animated: true)

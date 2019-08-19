@@ -9,7 +9,7 @@
 import UIKit
 import SwiftKeychainWrapper
 import SCLAlertView
-
+import CoreData
 class LogInViewController: UIViewController {
     
     @IBOutlet weak var logInUserId: UITextField!
@@ -17,27 +17,28 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var goToRegisterPageButt: UIButton!
     @IBOutlet weak var forgotPassButt: UIButton!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        setupLogInViewController()
-    }
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     var myUsers = LoginClass(success: false, data: LoginDataClass(id: "", userLogin: "", userNicename: "", userEmail: "", userURL: "", userRegistered: "", userStatus: "", displayName: "", etBanExpired: "", etBanNote: "", location: "", address: "", phone: "", mobile: "", etAvatar: "", etAvatarURL: "", postCount: "", commentCount: "", hourRate: "", facebook: "", twitter: "", registerStatus: "", banned: false, userHourRate: "", userProfileID: "", userCurrency: "", userSkills: "", userAvailable: "", paypal: "", avatar: "", avatarMobile: "", joinDate: "", firstName: "", lastName: "", dataDescription: "", label: "", authorURL: "", ajaxnonce: "", logoajaxnonce: "", dataID: "", banExpired: "", banNote: "", msg: "", redirectURL: "", dataDo: ""), msg: "")
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+     //   context.delete
+        setupLogInViewController()
+        
+      //  let entity = fetchController.object(at: IndexPath)
+        
+    }
     
     fileprivate func setupLogInViewController() {
         
-        
-    
     }
     
     var privatePass : String = "admin"
-    
     @IBAction func LogInMainButt(_ sender: UIButton) {
         
         privatePass = LogInUserPass.text ?? "admin"
-        
         
         let myActivityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.gray)
         myActivityIndicator.center = view.center
@@ -71,10 +72,11 @@ class LogInViewController: UIViewController {
                 } else {
                     //alert
                     self.removeActivityIndicator(activityIndicator: myActivityIndicator)
-                    SCLAlertView().showError("اطلاعات وارد شده نادرست است! ", subTitle: "لطفا دوباره سعی کنید")
+                    _ = SCLAlertView().showError("اطلاعات وارد شده نادرست است! ", subTitle:"لطفا دوباره سعی کنید", closeButtonTitle:"تایید")
                 }
             } else {
-                SCLAlertView().showError("خطا در ارتباط یا سیستم", subTitle: "لطفا دوباره سعی کنید")
+                _ = SCLAlertView().showError("خطا در ارتباط یا سیستم", subTitle:"لطفا دوباره سعی کنید", closeButtonTitle:"تایید")
+                
         }
     }
             task.resume()
@@ -100,16 +102,28 @@ class LogInViewController: UIViewController {
                 print("-------------------------------")
                 print(user?.token ?? "admin")
                 
+                var fakeRole : [String] = ["" , ""]
+                
                 let accessToken = user?.token
+                let newUser = UserInfo(context: self.context)
+                newUser.login = user?.user.data.userLogin
+                newUser.niceName = user?.user.data.userNicename
+                newUser.email = user?.user.data.userEmail
+                newUser.showName = user?.user.data.displayName
+                fakeRole = (user?.user.roles)!
+                let realrole = fakeRole[0]
+                newUser.userRole = realrole
+                self.saveCoreData()
+                
                 if (accessToken?.isEmpty)! {
-                    SCLAlertView().showError("خطا در ارتباط یا سیستم", subTitle: "لطفا دوباره سعی کنید")
+                    _ = SCLAlertView().showError("خطا در ارتباط یا سیستم", subTitle:"لطفا دوباره سعی کنید", closeButtonTitle:"تایید")
                 } else {
                     let saveAccesssToken: Bool = KeychainWrapper.standard.set(accessToken!, forKey: "accessToken")
                     if saveAccesssToken {
                         self.goToHomePage()
                         
                     }else{
-                        SCLAlertView().showError("خطا در ارتباط یا سیستم", subTitle: "لطفا دوباره سعی کنید")
+                         _ = SCLAlertView().showError("خطا در ارتباط یا سیستم", subTitle:"لطفا دوباره سعی کنید", closeButtonTitle:"تایید")
                     }
                 }
             }
@@ -135,18 +149,16 @@ class LogInViewController: UIViewController {
             {
                 activityIndicator.stopAnimating()
                 activityIndicator.removeFromSuperview()
+            }
+        }
+//MARK: - Saveing core data
+func saveCoreData() {
+        do {
+            try context.save()
+        } catch  {
+            print("error in saving core data \(error)")
         }
     }
-
-    
-    
-    
-    
 }
+    
 
-
-
-
-
-//let accessToken: String? = KeychainWrapper.standard.string(forKey: "accessToken")
-//request.addValue("Bearer \(accessToken!)", forHTTPHeaderField: "Authorization")

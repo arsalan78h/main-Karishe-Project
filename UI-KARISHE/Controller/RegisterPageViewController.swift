@@ -39,5 +39,7 @@ class RegisterPageViewController: UIViewController {
         }
         let vc = segue.destination as! DoRegisterViewController
         vc.roleMainOfUser = roleChoosenByuser
+        
+        print(vc.roleMainOfUser)
     }
 }

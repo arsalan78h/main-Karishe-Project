@@ -12,8 +12,6 @@ import SCLAlertView
 class verifyPageViewController: UIViewController {
    
     @IBOutlet weak var verifyCodeTextfield: UITextField!
-    @IBOutlet weak var returnButt: UIButton!
-    
     
     var saveUserData = UserClassForPassData(therole: "", theFirst_name: "", theLast_name: "", theMobile: "", theUser_email: "", theuser_login: "", theuser_pass: "", theRepeat_pass: "", theSms_active_code: "")
     
@@ -25,7 +23,7 @@ class verifyPageViewController: UIViewController {
 }
     func setupVerifyPageViewController() {
         
-        verifyCodeTextfield.textContentType = .oneTimeCode
+       // verifyCodeTextfield.textContentType = .oneTimeCode
         
     }
     @IBAction func verifyCodeButt(_ sender: Any) {
@@ -65,7 +63,6 @@ class verifyPageViewController: UIViewController {
             }
 
             let responseString = String(data: data, encoding: .utf8)
-            print("responseString = \(String(describing: responseString))")
             
             _ = String(data: data, encoding: .utf8)
             print("responseString = \(String(describing: responseString))")
@@ -73,8 +70,7 @@ class verifyPageViewController: UIViewController {
             
             if charResponseString[11] == "f" {
                 DispatchQueue.main.async {
-//                    _ = SCLAlertView().showError("مشکل در اطلاعات وارد شده", subTitle:"لطفاهمه اطلاعات را وارد کنید", closeButtonTitle:"تایید")
-                    _ = SCLAlertView().showError("کد وارد شده اشتباه است", subTitle: "")
+                    _ = SCLAlertView().showError("کد وارد شده اشتباه است", subTitle:"", closeButtonTitle:"تایید")
                 }
             }else{
                 DispatchQueue.main.async {
@@ -82,16 +78,27 @@ class verifyPageViewController: UIViewController {
                         showCloseButton: false)
                     let alertView = SCLAlertView(appearance: appearance)
                     alertView.addButton("ورود", target:self, selector:Selector(("enterButt")))
-                    alertView.showSuccess("ارسال کد", subTitle:"ثبت نام باموفقیت انجام شد")
+                    alertView.showSuccess("ثبت نام باموفقیت انجام شد", subTitle:"")
                 }
             }
         }
         task.resume()
     }
-//    @objc func enterButt() {
+    @objc func enterButt() {
 //        let nextVc = self.storyboard?.instantiateViewController(withIdentifier: "LogInViewControllerID") as! LogInViewController
 //        self.navigationController?.pushViewController(nextVc, animated: true)
-//    }
+        goToHomePage()
+    }
+    
+    func goToHomePage() {
+        
+        DispatchQueue.main.async
+            {
+                let homePage = self.storyboard?.instantiateViewController(withIdentifier: "mainNavigationBar") as! mainNavigationBar
+                let appDelegate = UIApplication.shared.delegate
+                appDelegate?.window??.rootViewController = homePage
+        }
+    }
 }
 
 

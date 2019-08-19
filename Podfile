@@ -6,8 +6,7 @@ target 'UI-KARISHE' do
 
   # Pods for UI-KARISHE
 
- pod 'SwiftKeychainWrapper', '~> 3.4'
-
+pod 'SwiftKeychainWrapper', '~> 3.4'
 pod 'SCLAlertView', '~> 0.8'
 
 
