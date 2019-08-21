@@ -11,7 +11,6 @@ import SCLAlertView
 
 class DoRegisterViewController: UIViewController {
 
-    
     @IBOutlet weak var userFName: UITextField!
     @IBOutlet weak var userLName: UITextField!
     @IBOutlet weak var userPhoneNum: UITextField!
@@ -39,21 +38,80 @@ class DoRegisterViewController: UIViewController {
         setUpDoRegisterViewController()
     }
     
-// MARK: - SETUP VIEW/////////////////////////////////////////////////////////////////
+    //MARK: - setting up Keyboard /////////////////////////////////////
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillHide() {
+        self.view.frame.origin.y = 0
+    }
+    
+    @objc func keyboardWillChange(notification: NSNotification) {
+        
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if (userVerifyPass.isFirstResponder || userPassWord.isFirstResponder ) {
+                self.view.frame.origin.y = -keyboardSize.height
+            } else if userProfileName.isFirstResponder {
+                self.view.frame.origin.y = -keyboardSize.height + 80
+            }
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    func doneButtMakerForKeyBoard(doneForTF : UITextField) {
+        let toolbar = UIToolbar(frame: CGRect(origin: .zero, size: .init(width: view.frame.size.width, height: 30)))
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneButt = UIBarButtonItem(title: "Done", style: .done
+            , target: self, action: #selector(doneButtonAction))
+        toolbar.setItems([flexSpace , doneButt], animated: false)
+        toolbar.sizeToFit()
+        doneForTF.inputAccessoryView = toolbar
+    }
+    
+    @objc func doneButtonAction() {
+        self.view.endEditing(true)
+    }
+// MARK: - SETUP VIEW////////////////////////////////////////////////////////
    func setUpDoRegisterViewController() {
     
     navigationItem.title = roleMainOfUser
-    
-    let dictionaryOfTextField = [1 : userFName,2 : userLName,3 : userPhoneNum,4  :userPhoneNum,5 : userMail,6 : userProfileName,7 : userPassWord,8 : userVerifyPass]
-    for (_,value) in dictionaryOfTextField {
-        linerTF(newTextField: value!)
-    }
-    
     userMail.keyboardType = .emailAddress
     
+    let dictionaryOfTextField = [1 : userFName,2 : userLName,3 : userPhoneNum,4  :userPhoneNum,5 : userMail,6 : userProfileName,7 : userPassWord,8 : userVerifyPass]
+    setLineUnderTF(funcDictionary: dictionaryOfTextField)
+    setDoneButtInKeyBoards(funcDictionary: dictionaryOfTextField)
     
 }
-   fileprivate func linerTF(newTextField : UITextField) {
+    fileprivate func setLineUnderTF(funcDictionary : [Int : UITextField?]) {
+        for (_,value) in funcDictionary {
+            lineMakerForTF(newTextField: value!)
+        }
+    }
+    
+    fileprivate func setDoneButtInKeyBoards(funcDictionary : [Int : UITextField?]) {
+        for (_,value) in funcDictionary {
+            //  linerTF(newTextField: value!)
+            doneButtMakerForKeyBoard(doneForTF: value!)
+        }
+    }
+    
+   fileprivate func lineMakerForTF(newTextField : UITextField) {
         let newLayer = CALayer()
         newLayer.frame = CGRect(x: 0, y: newTextField.frame.height , width: newTextField.frame.width , height: 2)
         
@@ -61,9 +119,9 @@ class DoRegisterViewController: UIViewController {
         
         newTextField.borderStyle = .none
         newTextField.layer.addSublayer(newLayer)
-        
     }
-////////////////////////////////////////////////////////////////////////////////////
+    
+    //MARK: - Tap Register Button///////////////////////////////////////////////
     @IBAction func registerButt(_ sender: Any) {
         
         if (userPhoneNum.hasText == false || userProfileName.hasText == false || userMail.hasText == false) {
@@ -163,6 +221,13 @@ class DoRegisterViewController: UIViewController {
         vc.saveUserData.user_email = inputUserData.user_email
         vc.saveUserData.user_login = inputUserData.user_login
         vc.saveUserData.user_pass = inputUserData.user_pass
+//        vc.saveUserDatarole = roleMainOfUser
+//        vc.saveUserDatafirstname =  userFName.text!
+//        vc.saveUserDatalastname = userLName.text!
+//        vc.saveUserDatamobile = userPhoneNum.text!
+//        vc.saveUserDatauseremail = userMail.text!
+//        vc.saveUserDatauserlogin = userProfileName.text!
+//        vc.saveUserDatauserpass = userPassWord.text!
     }
 ////////////////////////////////////////////////////////////////////////////////////
    fileprivate func userDataPassing() {

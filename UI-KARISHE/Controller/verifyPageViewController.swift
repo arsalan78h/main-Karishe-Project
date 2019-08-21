@@ -15,6 +15,15 @@ class verifyPageViewController: UIViewController {
     
     var saveUserData = UserClassForPassData(therole: "", theFirst_name: "", theLast_name: "", theMobile: "", theUser_email: "", theuser_login: "", theuser_pass: "", theRepeat_pass: "", theSms_active_code: "")
     
+//    var saveUserDatarole = ""
+//    var saveUserDatafirstname = ""
+//    var saveUserDatalastname = ""
+//    var saveUserDatamobile = ""
+//    var saveUserDatauseremail = ""
+//    var saveUserDatauserlogin = ""
+//    var saveUserDatauserpass = ""
+//    var verifyCodeTextfieldtext = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,11 +49,23 @@ class verifyPageViewController: UIViewController {
             "user_email" : saveUserData.user_email ,
             "user_login" : saveUserData.user_login ,
             "user_pass"  : saveUserData.user_pass ,
-            "repeat_pass" : saveUserData.repeat_pass ,
+            "repeat_pass" : saveUserData.user_pass ,
             "sms_active_code" : verifyCodeTextfield.text ?? 000000 ,
             "do" : "register" ,
             "action" : "ae-sync-user" ,
             "method" : "create"
+//            "role" : saveUserDatarole ,
+//            "first_name"  : saveUserDatafirstname ,
+//            "last_name" : saveUserDatalastname ,
+//            "mobile" : saveUserDatamobile ,
+//            "user_email" : saveUserDatauseremail ,
+//            "user_login" : saveUserDatauserlogin ,
+//            "user_pass"  : saveUserDatauserpass ,
+//            "repeat_pass" : saveUserDatauserpass ,
+//            "sms_active_code" : verifyCodeTextfield.text ?? 000000 ,
+//            "do" : "register" ,
+//            "action" : "ae-sync-user" ,
+//            "method" : "create"
         ]
         request.httpBody = parameters.percentEscaped().data(using: .utf8)
 
@@ -85,13 +106,9 @@ class verifyPageViewController: UIViewController {
         task.resume()
     }
     @objc func enterButt() {
-//        let nextVc = self.storyboard?.instantiateViewController(withIdentifier: "LogInViewControllerID") as! LogInViewController
-//        self.navigationController?.pushViewController(nextVc, animated: true)
         goToHomePage()
     }
-    
     func goToHomePage() {
-        
         DispatchQueue.main.async
             {
                 let homePage = self.storyboard?.instantiateViewController(withIdentifier: "mainNavigationBar") as! mainNavigationBar

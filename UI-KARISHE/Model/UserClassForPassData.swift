@@ -17,7 +17,7 @@ class UserClassForPassData {
     var user_email = ""
     var user_login = ""
     var user_pass = ""
-    var repeat_pass = ""
+ //   var repeat_pass = ""
     var sms_active_code = ""
     
     
@@ -29,7 +29,7 @@ class UserClassForPassData {
         self.user_email = theUser_email
         self.user_login = theuser_login
         self.user_pass = theuser_pass
-        self.repeat_pass = theRepeat_pass
+     //   self.repeat_pass = theRepeat_pass
         self.sms_active_code = theSms_active_code
         
     }

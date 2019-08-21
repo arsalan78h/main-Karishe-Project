@@ -136,13 +136,13 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="dbf-KA-Pbg" userLabel="textField Stack View">
                                         <rect key="frame" x="0.0" y="0.0" width="323.33333333333331" height="94"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="تلفن یا پست الکترونیک                                  " textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kDH-IZ-zZt">
+                                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="تلفن یا پست الکترونیک                                  " textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kDH-IZ-zZt">
                                                 <rect key="frame" x="0.0" y="0.0" width="323.33333333333331" height="32"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="رمز عبور" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zp0-BU-zOZ">
+                                            <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="رمز عبور" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zp0-BU-zOZ">
                                                 <rect key="frame" x="0.0" y="62" width="323.33333333333331" height="32"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -497,7 +497,7 @@
         <!--Do Register View Controller-->
         <scene sceneID="HXX-h8-xIR">
             <objects>
-                <viewController id="QUf-8k-Rlh" customClass="DoRegisterViewController" customModule="UI_KARISHE" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DoRegisterViewController" id="QUf-8k-Rlh" customClass="DoRegisterViewController" customModule="UI_KARISHE" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h8Z-vl-gsJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -650,6 +650,7 @@
                                 </state>
                                 <connections>
                                     <action selector="registerButt:" destination="QUf-8k-Rlh" eventType="touchUpInside" id="jZY-WX-ffM"/>
+                                    <segue destination="ssE-jB-vKQ" kind="show" identifier="verifyPageViewController" id="Dwe-0F-qf6"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -762,7 +763,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vU0-py-0uZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3057" y="-1096"/>
+            <point key="canvasLocation" x="3309" y="-1096"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Uao-So-Lm6">

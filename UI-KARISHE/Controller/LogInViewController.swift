@@ -24,17 +24,40 @@ class LogInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-     //   context.delete
         setupLogInViewController()
         
-      //  let entity = fetchController.object(at: IndexPath)
-        
     }
-    
+    //MARK: - Set Up View
     fileprivate func setupLogInViewController() {
+        let dictionaryOfTextField = [1 : logInUserId,2 : LogInUserPass]
+        setDoneButtInKeyBoards(funcDictionary: dictionaryOfTextField)
         
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
+    func doneButtMakerForKeyBoard(doneForTF : UITextField) {
+        let toolbar = UIToolbar(frame: CGRect(origin: .zero, size: .init(width: view.frame.size.width, height: 30)))
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneButt = UIBarButtonItem(title: "Done", style: .done
+            , target: self, action: #selector(doneButtonAction))
+        toolbar.setItems([flexSpace , doneButt], animated: false)
+        toolbar.sizeToFit()
+        doneForTF.inputAccessoryView = toolbar
+    }
+    @objc func doneButtonAction() {
+        self.view.endEditing(true)
+    }
+    
+    fileprivate func setDoneButtInKeyBoards(funcDictionary : [Int : UITextField?]) {
+        for (_,value) in funcDictionary {
+            //  linerTF(newTextField: value!)
+            doneButtMakerForKeyBoard(doneForTF: value!)
+        }
+    }
+    //MARK: - Tap Log in Butoon
     var privatePass : String = "admin"
     @IBAction func LogInMainButt(_ sender: UIButton) {
         
