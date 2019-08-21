@@ -9,7 +9,7 @@
 import UIKit
 import SCLAlertView
 
-class DoRegisterViewController: UIViewController {
+class DoRegisterViewController: UIViewController , UITextFieldDelegate {
 
     @IBOutlet weak var userFName: UITextField!
     @IBOutlet weak var userLName: UITextField!
@@ -88,7 +88,7 @@ class DoRegisterViewController: UIViewController {
         self.view.endEditing(true)
     }
 // MARK: - SETUP VIEW////////////////////////////////////////////////////////
-   func setUpDoRegisterViewController() {
+   fileprivate func setUpDoRegisterViewController() {
     
     navigationItem.title = roleMainOfUser
     userMail.keyboardType = .emailAddress
@@ -96,6 +96,8 @@ class DoRegisterViewController: UIViewController {
     let dictionaryOfTextField = [1 : userFName,2 : userLName,3 : userPhoneNum,4  :userPhoneNum,5 : userMail,6 : userProfileName,7 : userPassWord,8 : userVerifyPass]
     setLineUnderTF(funcDictionary: dictionaryOfTextField)
     setDoneButtInKeyBoards(funcDictionary: dictionaryOfTextField)
+    
+     _ = textFieldShouldReturn(userFName)
     
 }
     fileprivate func setLineUnderTF(funcDictionary : [Int : UITextField?]) {
@@ -120,10 +122,21 @@ class DoRegisterViewController: UIViewController {
         newTextField.borderStyle = .none
         newTextField.layer.addSublayer(newLayer)
     }
+    //Go next textField when tap next key on keyboard /////////////////////////
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        let nextTag = textField.tag + 1
+        
+        if let nextResponder = textField.superview?.viewWithTag(nextTag) {
+            nextResponder.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+        return true
+    }
     
     //MARK: - Tap Register Button///////////////////////////////////////////////
     @IBAction func registerButt(_ sender: Any) {
-        
+        view.endEditing(true)
         if (userPhoneNum.hasText == false || userProfileName.hasText == false || userMail.hasText == false) {
             //alert
             DispatchQueue.main.async {
@@ -208,37 +221,18 @@ class DoRegisterViewController: UIViewController {
     }
 ////////////////////////////////////////////////////////////////////////////////////
     @objc func goToVerifyCodeVC() {
-        userDataPassing()
+     //   userDataPassing()
         let nextVc = self.storyboard?.instantiateViewController(withIdentifier: "verifyPageViewController") as! verifyPageViewController
+        passDataToNextVC(vc: nextVc)
         self.navigationController?.pushViewController(nextVc, animated: true)
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! verifyPageViewController
-        vc.saveUserData.role = inputUserData.role
-        vc.saveUserData.first_name = inputUserData.first_name
-        vc.saveUserData.last_name = inputUserData.last_name
-        vc.saveUserData.mobile = inputUserData.mobile
-        vc.saveUserData.user_email = inputUserData.user_email
-        vc.saveUserData.user_login = inputUserData.user_login
-        vc.saveUserData.user_pass = inputUserData.user_pass
-//        vc.saveUserDatarole = roleMainOfUser
-//        vc.saveUserDatafirstname =  userFName.text!
-//        vc.saveUserDatalastname = userLName.text!
-//        vc.saveUserDatamobile = userPhoneNum.text!
-//        vc.saveUserDatauseremail = userMail.text!
-//        vc.saveUserDatauserlogin = userProfileName.text!
-//        vc.saveUserDatauserpass = userPassWord.text!
+    func passDataToNextVC(vc : verifyPageViewController) {
+        vc.saveUserData.role = roleMainOfUser
+        vc.saveUserData.first_name = userFName.text!
+        vc.saveUserData.last_name = userLName.text!
+        vc.saveUserData.mobile = userPhoneNum.text!
+        vc.saveUserData.user_email = userMail.text!
+        vc.saveUserData.user_login = userProfileName.text!
+        vc.saveUserData.user_pass = userPassWord.text!
     }
-////////////////////////////////////////////////////////////////////////////////////
-   fileprivate func userDataPassing() {
-        inputUserData.role = roleMainOfUser
-        inputUserData.first_name = userFName.text!
-        inputUserData.last_name = userLName.text!
-        inputUserData.mobile = userPhoneNum.text!
-        inputUserData.user_email = userMail.text!
-        inputUserData.user_login = userProfileName.text!
-        inputUserData.user_pass = userPassWord.text!
-        // don't pass verify user pass(same user pass and verify user pass)
-    }
-    //try animation alert later
 }

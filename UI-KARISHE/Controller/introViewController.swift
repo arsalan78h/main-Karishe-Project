@@ -7,15 +7,13 @@
 //
 
 import UIKit
+import SCLAlertView
 
 class introViewController: UIViewController , UICollectionViewDataSource , UICollectionViewDelegate , UICollectionViewDelegateFlowLayout {
-    
     
     @IBOutlet weak var AuthPageCV: UICollectionView!
     @IBOutlet weak var registerButt: UIButton!
     @IBOutlet weak var logInButt: UIButton!
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +29,14 @@ class introViewController: UIViewController , UICollectionViewDataSource , UICol
         
         registerButt.layer.cornerRadius = 20.0
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        if !CheckInternet.Connection(){
+            
+        _ = SCLAlertView().showError("مشکل در اتصال اینترت", subTitle:"دوباره سعی کنید", closeButtonTitle:"تایید")
+        }
     }
     
     // MARK: - COLLECTIONVIEW DELEGATE AND DATASOURCE
@@ -52,7 +58,5 @@ class introViewController: UIViewController , UICollectionViewDataSource , UICol
         
         return 0
     }
-
-
 }
 

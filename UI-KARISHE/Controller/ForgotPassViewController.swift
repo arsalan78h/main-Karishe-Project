@@ -17,8 +17,41 @@ class ForgotPassViewController: UIViewController {
 
         
     }
+    //MARK: - SetUp View
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillHide() {
+        self.view.frame.origin.y = 0
+    }
+    
+    @objc func keyboardWillChange(notification: NSNotification) {
+        
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if (forgotPassTextField.isFirstResponder) {
+                self.view.frame.origin.y = -keyboardSize.height + 100
+            }
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    //MARK: - Tap ForGotPass Button
     @IBAction func sendForgotButt(_ sender: UIButton) {
+        view.endEditing(true)
         
         let url = URL(string: "https://www.karishe.com/wp-admin/admin-ajax.php")!
         var request = URLRequest(url: url)
@@ -58,7 +91,7 @@ class ForgotPassViewController: UIViewController {
                 }
             }else {
                     DispatchQueue.main.async {
-                        _ = SCLAlertView().showSuccess("ایمیل یا شماره وارد شده را برسی کنید", subTitle: "")
+                        _ = SCLAlertView().showSuccess("ایمیل یا شماره وارد شده را برسی کنید", subTitle: "" , closeButtonTitle: "تایید")
                 }
             }
         }

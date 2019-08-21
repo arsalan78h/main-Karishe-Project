@@ -10,7 +10,7 @@ import UIKit
 import SwiftKeychainWrapper
 import SCLAlertView
 import CoreData
-class LogInViewController: UIViewController {
+class LogInViewController: UIViewController , UITextFieldDelegate {
     
     @IBOutlet weak var logInUserId: UITextField!
     @IBOutlet weak var LogInUserPass: UITextField!
@@ -27,11 +27,13 @@ class LogInViewController: UIViewController {
         setupLogInViewController()
         
     }
+    
     //MARK: - Set Up View
     fileprivate func setupLogInViewController() {
         let dictionaryOfTextField = [1 : logInUserId,2 : LogInUserPass]
         setDoneButtInKeyBoards(funcDictionary: dictionaryOfTextField)
         
+         _ = textFieldShouldReturn(LogInUserPass)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -57,6 +59,18 @@ class LogInViewController: UIViewController {
             doneButtMakerForKeyBoard(doneForTF: value!)
         }
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        let nextTag = textField.tag + 1
+        
+        if let nextResponder = textField.superview?.viewWithTag(nextTag) {
+            nextResponder.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+        return true
+    }
+    
     //MARK: - Tap Log in Butoon
     var privatePass : String = "admin"
     @IBAction func LogInMainButt(_ sender: UIButton) {

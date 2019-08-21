@@ -21,6 +21,7 @@
 		84DF014622E4498B00D9A06C /* RegisterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DF014522E4498B00D9A06C /* RegisterPageViewController.swift */; };
 		84DF014822E44F6F00D9A06C /* DoRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DF014722E44F6F00D9A06C /* DoRegisterViewController.swift */; };
 		84F6405422E6EF8700AA65F5 /* UserClassForPassData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6405322E6EF8700AA65F5 /* UserClassForPassData.swift */; };
+		84F7764A230D4B460047E592 /* CheckInternet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F77649230D4B460047E592 /* CheckInternet.swift */; };
 		84FB3E3822ED7BD4006F2A31 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FB3E3722ED7BD4006F2A31 /* LogInViewController.swift */; };
 		84FB3E3A22ED8CAF006F2A31 /* ForgotPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FB3E3922ED8CAF006F2A31 /* ForgotPassViewController.swift */; };
 		84FDDCF522F0319400EF203E /* TokenServiceClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FDDCF422F0319400EF203E /* TokenServiceClass.swift */; };
@@ -48,6 +49,7 @@
 		84DF014522E4498B00D9A06C /* RegisterPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageViewController.swift; sourceTree = "<group>"; };
 		84DF014722E44F6F00D9A06C /* DoRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoRegisterViewController.swift; sourceTree = "<group>"; };
 		84F6405322E6EF8700AA65F5 /* UserClassForPassData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserClassForPassData.swift; sourceTree = "<group>"; };
+		84F77649230D4B460047E592 /* CheckInternet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInternet.swift; sourceTree = "<group>"; };
 		84FB3E3722ED7BD4006F2A31 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		84FB3E3922ED8CAF006F2A31 /* ForgotPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassViewController.swift; sourceTree = "<group>"; };
 		84FDDCF422F0319400EF203E /* TokenServiceClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenServiceClass.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				84A2C17722E322160026DB83 /* UI-KARISHE */,
+				84F77648230D4B300047E592 /* Support Files */,
 				84A2C17622E322160026DB83 /* Products */,
 				9384714DAE3A7D845A88A532 /* Pods */,
 				B6D13C72C3CF0DF05E1D3B8E /* Frameworks */,
@@ -147,6 +150,14 @@
 				84C9F8DE22E48E0700DB3367 /* extentions.swift */,
 			);
 			path = Extentions;
+			sourceTree = "<group>";
+		};
+		84F77648230D4B300047E592 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				84F77649230D4B460047E592 /* CheckInternet.swift */,
+			);
+			path = "Support Files";
 			sourceTree = "<group>";
 		};
 		84FDDCF322F0316C00EF203E /* JSON Classes */ = {
@@ -302,6 +313,7 @@
 				84C9F8DF22E48E0700DB3367 /* extentions.swift in Sources */,
 				849CC6EF23081B41004DD7FC /* UserInfoDB.xcdatamodeld in Sources */,
 				84FDDCF522F0319400EF203E /* TokenServiceClass.swift in Sources */,
+				84F7764A230D4B460047E592 /* CheckInternet.swift in Sources */,
 				84DF014622E4498B00D9A06C /* RegisterPageViewController.swift in Sources */,
 				84A2C18B22E32DC30026DB83 /* CVAuthPageCustomCell.swift in Sources */,
 				84F6405422E6EF8700AA65F5 /* UserClassForPassData.swift in Sources */,

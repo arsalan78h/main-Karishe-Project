@@ -15,28 +15,53 @@ class verifyPageViewController: UIViewController {
     
     var saveUserData = UserClassForPassData(therole: "", theFirst_name: "", theLast_name: "", theMobile: "", theUser_email: "", theuser_login: "", theuser_pass: "", theRepeat_pass: "", theSms_active_code: "")
     
-//    var saveUserDatarole = ""
-//    var saveUserDatafirstname = ""
-//    var saveUserDatalastname = ""
-//    var saveUserDatamobile = ""
-//    var saveUserDatauseremail = ""
-//    var saveUserDatauserlogin = ""
-//    var saveUserDatauserpass = ""
-//    var verifyCodeTextfieldtext = ""
-    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupVerifyPageViewController()
         
 }
+    //MARK: - SetUp View ///////////////////////////////////////////////////
     func setupVerifyPageViewController() {
         
        // verifyCodeTextfield.textContentType = .oneTimeCode
         
     }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillHide() {
+        self.view.frame.origin.y = 0
+    }
+    
+    @objc func keyboardWillChange(notification: NSNotification) {
+        
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if (verifyCodeTextfield.isFirstResponder) {
+                self.view.frame.origin.y = -keyboardSize.height + 100
+            }
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    //MARK: - Tap done Button
     @IBAction func verifyCodeButt(_ sender: Any) {
-
+        view.endEditing(true)
         let url = URL(string: "https://www.karishe.com/wp-admin/admin-ajax.php")!
         var request = URLRequest(url: url)
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
@@ -53,20 +78,7 @@ class verifyPageViewController: UIViewController {
             "sms_active_code" : verifyCodeTextfield.text ?? 000000 ,
             "do" : "register" ,
             "action" : "ae-sync-user" ,
-            "method" : "create"
-//            "role" : saveUserDatarole ,
-//            "first_name"  : saveUserDatafirstname ,
-//            "last_name" : saveUserDatalastname ,
-//            "mobile" : saveUserDatamobile ,
-//            "user_email" : saveUserDatauseremail ,
-//            "user_login" : saveUserDatauserlogin ,
-//            "user_pass"  : saveUserDatauserpass ,
-//            "repeat_pass" : saveUserDatauserpass ,
-//            "sms_active_code" : verifyCodeTextfield.text ?? 000000 ,
-//            "do" : "register" ,
-//            "action" : "ae-sync-user" ,
-//            "method" : "create"
-        ]
+            "method" : "create"]
         request.httpBody = parameters.percentEscaped().data(using: .utf8)
 
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
@@ -94,6 +106,7 @@ class verifyPageViewController: UIViewController {
                     _ = SCLAlertView().showError("کد وارد شده اشتباه است", subTitle:"", closeButtonTitle:"تایید")
                 }
             }else{
+                //
                 DispatchQueue.main.async {
                     let appearance = SCLAlertView.SCLAppearance(
                         showCloseButton: false)
@@ -116,9 +129,15 @@ class verifyPageViewController: UIViewController {
                 appDelegate?.window??.rootViewController = homePage
         }
     }
+    
+    
+    
+    
+    
+    
+    
+    
 }
-
-
 
 
 
