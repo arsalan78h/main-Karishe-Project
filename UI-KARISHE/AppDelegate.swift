@@ -41,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if accessToken != nil {
               // Take user to a home page
             let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let homePage = mainStoryboard.instantiateViewController(withIdentifier: "mainNavigationBar") as! mainNavigationBar
+            let homePage = mainStoryboard.instantiateViewController(withIdentifier: "EmpNavigationBar") as! empNavigationBar
             self.window?.rootViewController = homePage
         }
         

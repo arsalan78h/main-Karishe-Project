@@ -10,6 +10,7 @@ import UIKit
 import SwiftKeychainWrapper
 import SCLAlertView
 import CoreData
+
 class LogInViewController: UIViewController , UITextFieldDelegate {
     
     @IBOutlet weak var logInUserId: UITextField!
@@ -17,9 +18,9 @@ class LogInViewController: UIViewController , UITextFieldDelegate {
     @IBOutlet weak var goToRegisterPageButt: UIButton!
     @IBOutlet weak var forgotPassButt: UIButton!
     
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+  //  let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    var myUsers = LoginClass(success: false, data: LoginDataClass(id: "", userLogin: "", userNicename: "", userEmail: "", userURL: "", userRegistered: "", userStatus: "", displayName: "", etBanExpired: "", etBanNote: "", location: "", address: "", phone: "", mobile: "", etAvatar: "", etAvatarURL: "", postCount: "", commentCount: "", hourRate: "", facebook: "", twitter: "", registerStatus: "", banned: false, userHourRate: "", userProfileID: "", userCurrency: "", userSkills: "", userAvailable: "", paypal: "", avatar: "", avatarMobile: "", joinDate: "", firstName: "", lastName: "", dataDescription: "", label: "", authorURL: "", ajaxnonce: "", logoajaxnonce: "", dataID: "", banExpired: "", banNote: "", msg: "", redirectURL: "", dataDo: ""), msg: "")
+  //  var myUsers = LoginClass(success: false, data: LoginDataClass(id: "", userLogin: "", userNicename: "", userEmail: "", userURL: "", userRegistered: "", userStatus: "", displayName: "", etBanExpired: "", etBanNote: "", location: "", address: "", phone: "", mobile: "", etAvatar: "", etAvatarURL: "", postCount: "", commentCount: "", hourRate: "", facebook: "", twitter: "", registerStatus: "", banned: false, userHourRate: "", userProfileID: "", userCurrency: "", userSkills: "", userAvailable: "", paypal: "", avatar: "", avatarMobile: "", joinDate: "", firstName: "", lastName: "", dataDescription: "", label: "", authorURL: "", ajaxnonce: "", logoajaxnonce: "", dataID: "", banExpired: "", banNote: "", msg: "", redirectURL: "", dataDo: ""), msg: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,112 +73,135 @@ class LogInViewController: UIViewController , UITextFieldDelegate {
     }
     
     //MARK: - Tap Log in Butoon
-    var privatePass : String = "admin"
     @IBAction func LogInMainButt(_ sender: UIButton) {
+        view.endEditing(true)
         
-        privatePass = LogInUserPass.text ?? "admin"
+        let homePage = self.storyboard?.instantiateViewController(withIdentifier: "empNavigationBar") as! empNavigationBar
+        print("---------------------------")
+        print(logInUserId.text ?? "plz enter ID for LogIn")
+        print(LogInUserPass.text ?? "plz enter passWord")
         
-        let myActivityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.gray)
-        myActivityIndicator.center = view.center
-        myActivityIndicator.hidesWhenStopped = false
-        myActivityIndicator.startAnimating()
-        view.addSubview(myActivityIndicator)
-        
-        let url = URL(string: "https://www.karishe.com/wp-admin/admin-ajax.php")!
-        var request = URLRequest(url: url)
-        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-        request.httpMethod = "POST"
         let parameters: [String: Any] = [
-            "ae_redirect_url": "https://www.karishe.com" ,
-            "user_login": logInUserId.text ?? "admin@admin.com" ,
-            "user_pass": LogInUserPass.text ?? "adimn" ,
-            "remember": "on" ,
-            "do": "login" ,
-            "action": "ae-sync-user" ,
-            "method": "read"
-        ]
-        request.httpBody = parameters.percentEscaped().data(using: .utf8)
-        
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            if let data = data {
-                
-                self.myUsers = try! JSONDecoder().decode(LoginClass.self, from: data)
-                
-                if self.myUsers.success == true {
-                    self.checkToken()
-                    self.removeActivityIndicator(activityIndicator: myActivityIndicator)
-                } else {
-                    //alert
-                    self.removeActivityIndicator(activityIndicator: myActivityIndicator)
-                    _ = SCLAlertView().showError("اطلاعات وارد شده نادرست است! ", subTitle:"لطفا دوباره سعی کنید", closeButtonTitle:"تایید")
-                }
-            } else {
-                _ = SCLAlertView().showError("خطا در ارتباط یا سیستم", subTitle:"لطفا دوباره سعی کنید", closeButtonTitle:"تایید")
-                
-        }
-    }
-            task.resume()
-}
-    
+                    "ae_redirect_url": "https://www.karishe.com" ,
+                    "user_login": logInUserId.text ?? "admin@admin.com" ,
+                    "user_pass": LogInUserPass.text ?? "admin" ,
+                    "remember": "on" ,
+                    "do": "login" ,
+                    "action": "ae-sync-user" ,
+                    "method": "read" ]
+//        let parameters: [String: Any] = [
+//            "ae_redirect_url": "https://www.karishe.com" ,
+//            "user_login": "09123364081" ,
+//            "user_pass": "123456" ,
+//            "remember": "on" ,
+//            "do": "login" ,
+//            "action": "ae-sync-user" ,
+//            "method": "read" ]
+        var pas = LoginCL()
+        pas.logInFunc(urlOfFunc: "https://www.karishe.com/wp-admin/admin-ajax.php", parameters: parameters , user_pass: LogInUserPass.text ?? "admin", nv: homePage )
+
+//
+//        let myActivityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.gray)
+//        myActivityIndicator.center = view.center
+//        myActivityIndicator.hidesWhenStopped = false
+//        myActivityIndicator.startAnimating()
+//        view.addSubview(myActivityIndicator)
+//
+//        let url = URL(string: "https://www.karishe.com/wp-admin/admin-ajax.php")!
+//        var request = URLRequest(url: url)
+//        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+//        request.httpMethod = "POST"
+//        let parameters: [String: Any] = [
+//            "ae_redirect_url": "https://www.karishe.com" ,
+//            "user_login": logInUserId.text ?? "admin@admin.com" ,
+//            "user_pass": LogInUserPass.text ?? "adimn" ,
+//            "remember": "on" ,
+//            "do": "login" ,
+//            "action": "ae-sync-user" ,
+//            "method": "read"
+//        ]
+//        request.httpBody = parameters.percentEscaped().data(using: .utf8)
+//
+//        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+//            if let data = data {
+//
+//                self.myUsers = try! JSONDecoder().decode(LoginClass.self, from: data)
+//
+//                if self.myUsers.success == true {
+//                    self.checkToken()
+//                    self.removeActivityIndicator(activityIndicator: myActivityIndicator)
+//                } else {
+//                    //alert
+//                    self.removeActivityIndicator(activityIndicator: myActivityIndicator)
+//                    _ = SCLAlertView().showError("اطلاعات وارد شده نادرست است! ", subTitle:"لطفا دوباره سعی کنید", closeButtonTitle:"تایید")
+//                }
+//            } else {
+//                _ = SCLAlertView().showError("خطا در ارتباط یا سیستم", subTitle:"لطفا دوباره سعی کنید", closeButtonTitle:"تایید")
+//
+//        }
+//    }
+//            task.resume()
+//}
+//
+//////////////////////////////////////////////////////////////////////////////////////////
+//    func checkToken(){
+//
+//        let url = URL(string: "http://www.karishe.ir/wp-json/aam/v1/authenticate")!
+//        var request = URLRequest(url: url)
+//        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+//        request.httpMethod = "POST"
+//        let parameters: [String: Any] = [
+//            "username": self.myUsers.data.userLogin ,  //"User-142973"
+//            "password": privatePass ,  //"arsalan7878"
+//        ]
+//        request.httpBody = parameters.percentEscaped().data(using: .utf8)
+//        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+//
+//            if let data = data {
+//                let user = try? JSONDecoder().decode(TokenClass.self, from: data)
+//
+//                print("-------------------------------")
+//                print(user?.token ?? "admin")
+//
+//                var fakeRole : [String] = ["" , ""]
+//
+//                let accessToken = user?.token
+//                let newUser = UserInfo(context: self.context)
+//                newUser.login = user?.user.data.userLogin
+//                newUser.niceName = user?.user.data.userNicename
+//                newUser.email = user?.user.data.userEmail
+//                newUser.showName = user?.user.data.displayName
+//                fakeRole = (user?.user.roles)!
+//                let realrole = fakeRole[0]
+//                newUser.userRole = realrole
+//                self.saveCoreData()
+//
+//                if (accessToken?.isEmpty)! {
+//                    _ = SCLAlertView().showError("خطا در ارتباط یا سیستم", subTitle:"لطفا دوباره سعی کنید", closeButtonTitle:"تایید")
+//                } else {
+//                    let saveAccesssToken: Bool = KeychainWrapper.standard.set(accessToken!, forKey: "accessToken")
+//                    if saveAccesssToken {
+//                        self.goToHomePage()
+//
+//                    }else{
+//                         _ = SCLAlertView().showError("خطا در ارتباط یا سیستم", subTitle:"لطفا دوباره سعی کنید", closeButtonTitle:"تایید")
+//                    }
+//                }
+//            }
+//        }
+//    task.resume()
+//}
 ////////////////////////////////////////////////////////////////////////////////////////
-    func checkToken(){
-        
-        let url = URL(string: "http://www.karishe.ir/wp-json/aam/v1/authenticate")!
-        var request = URLRequest(url: url)
-        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-        request.httpMethod = "POST"
-        let parameters: [String: Any] = [
-            "username": self.myUsers.data.userLogin ,  //"User-142973"
-            "password": privatePass ,  //"arsalan7878"
-        ]
-        request.httpBody = parameters.percentEscaped().data(using: .utf8)
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            
-            if let data = data {
-                let user = try? JSONDecoder().decode(TokenClass.self, from: data)
-                
-                print("-------------------------------")
-                print(user?.token ?? "admin")
-                
-                var fakeRole : [String] = ["" , ""]
-                
-                let accessToken = user?.token
-                let newUser = UserInfo(context: self.context)
-                newUser.login = user?.user.data.userLogin
-                newUser.niceName = user?.user.data.userNicename
-                newUser.email = user?.user.data.userEmail
-                newUser.showName = user?.user.data.displayName
-                fakeRole = (user?.user.roles)!
-                let realrole = fakeRole[0]
-                newUser.userRole = realrole
-                self.saveCoreData()
-                
-                if (accessToken?.isEmpty)! {
-                    _ = SCLAlertView().showError("خطا در ارتباط یا سیستم", subTitle:"لطفا دوباره سعی کنید", closeButtonTitle:"تایید")
-                } else {
-                    let saveAccesssToken: Bool = KeychainWrapper.standard.set(accessToken!, forKey: "accessToken")
-                    if saveAccesssToken {
-                        self.goToHomePage()
-                        
-                    }else{
-                         _ = SCLAlertView().showError("خطا در ارتباط یا سیستم", subTitle:"لطفا دوباره سعی کنید", closeButtonTitle:"تایید")
-                    }
-                }
-            }
-        }
-    task.resume()
-}
-////////////////////////////////////////////////////////////////////////////////////////
     
-   func goToHomePage() {
-    
-    DispatchQueue.main.async
-        {
-            let homePage = self.storyboard?.instantiateViewController(withIdentifier: "mainNavigationBar") as! mainNavigationBar
-            let appDelegate = UIApplication.shared.delegate
-            appDelegate?.window??.rootViewController = homePage
-    }
-}
+//   func goToHomePage() {
+//
+//    DispatchQueue.main.async
+//        {
+//            let homePage = self.storyboard?.instantiateViewController(withIdentifier: "mainNavigationBar") as! empNavigationBar
+//            let appDelegate = UIApplication.shared.delegate
+//            appDelegate?.window??.rootViewController = homePage
+//    }
+//}
     
 //////////////////////////////////////////////////////////////////////////////////////
     func removeActivityIndicator(activityIndicator: UIActivityIndicatorView)
@@ -189,12 +213,12 @@ class LogInViewController: UIViewController , UITextFieldDelegate {
             }
         }
 //MARK: - Saveing core data
-func saveCoreData() {
-        do {
-            try context.save()
-        } catch  {
-            print("error in saving core data \(error)")
-        }
+//func saveCoreData() {
+//        do {
+//            try context.save()
+//        } catch  {
+//            print("error in saving core data \(error)")
+//        }
     }
 }
     

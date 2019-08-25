@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8424D81122F190E400003B48 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8424D81022F190E400003B48 /* HomePageViewController.swift */; };
-		8424D81522F1962100003B48 /* mainNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8424D81422F1962100003B48 /* mainNavigationBar.swift */; };
+		8424D81122F190E400003B48 /* EmpPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8424D81022F190E400003B48 /* EmpPageViewController.swift */; };
+		8424D81522F1962100003B48 /* empNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8424D81422F1962100003B48 /* empNavigationBar.swift */; };
+		84653BF2231114FF00D48184 /* LogInClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84653BF1231114FF00D48184 /* LogInClass.swift */; };
+		84653BF623112B4A00D48184 /* freNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84653BF523112B4A00D48184 /* freNavigationBar.swift */; };
+		84653BF823112C0200D48184 /* FrePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84653BF723112C0200D48184 /* FrePageViewController.swift */; };
+		84653BFA2311647500D48184 /* employerTokenServiceClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84653BF92311647500D48184 /* employerTokenServiceClass.swift */; };
 		849CC6EF23081B41004DD7FC /* UserInfoDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 849CC6ED23081B41004DD7FC /* UserInfoDB.xcdatamodeld */; };
 		84A2C17922E322160026DB83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2C17822E322160026DB83 /* AppDelegate.swift */; };
 		84A2C17B22E322160026DB83 /* introViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2C17A22E322160026DB83 /* introViewController.swift */; };
@@ -24,7 +28,7 @@
 		84F7764A230D4B460047E592 /* CheckInternet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F77649230D4B460047E592 /* CheckInternet.swift */; };
 		84FB3E3822ED7BD4006F2A31 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FB3E3722ED7BD4006F2A31 /* LogInViewController.swift */; };
 		84FB3E3A22ED8CAF006F2A31 /* ForgotPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FB3E3922ED8CAF006F2A31 /* ForgotPassViewController.swift */; };
-		84FDDCF522F0319400EF203E /* TokenServiceClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FDDCF422F0319400EF203E /* TokenServiceClass.swift */; };
+		84FDDCF522F0319400EF203E /* FreelancerTokenServiceClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FDDCF422F0319400EF203E /* FreelancerTokenServiceClass.swift */; };
 		84FE22B422F179DA006E6F2F /* LoginServiceClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FE22B322F179DA006E6F2F /* LoginServiceClass.swift */; };
 		EB2EC6ACE86082DB1AABE726 /* Pods_UI_KARISHE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A85BCBDA6B431906F774058 /* Pods_UI_KARISHE.framework */; };
 /* End PBXBuildFile section */
@@ -33,8 +37,12 @@
 		3F7806838099B0F347E87AAF /* Pods-UI-KARISHE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UI-KARISHE.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UI-KARISHE/Pods-UI-KARISHE.debug.xcconfig"; sourceTree = "<group>"; };
 		7A85BCBDA6B431906F774058 /* Pods_UI_KARISHE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UI_KARISHE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B619DDEFE701AA784B11C1A /* Pods-UI-KARISHE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UI-KARISHE.release.xcconfig"; path = "Pods/Target Support Files/Pods-UI-KARISHE/Pods-UI-KARISHE.release.xcconfig"; sourceTree = "<group>"; };
-		8424D81022F190E400003B48 /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
-		8424D81422F1962100003B48 /* mainNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainNavigationBar.swift; sourceTree = "<group>"; };
+		8424D81022F190E400003B48 /* EmpPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmpPageViewController.swift; sourceTree = "<group>"; };
+		8424D81422F1962100003B48 /* empNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = empNavigationBar.swift; sourceTree = "<group>"; };
+		84653BF1231114FF00D48184 /* LogInClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInClass.swift; sourceTree = "<group>"; };
+		84653BF523112B4A00D48184 /* freNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = freNavigationBar.swift; sourceTree = "<group>"; };
+		84653BF723112C0200D48184 /* FrePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrePageViewController.swift; sourceTree = "<group>"; };
+		84653BF92311647500D48184 /* employerTokenServiceClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = employerTokenServiceClass.swift; sourceTree = "<group>"; };
 		849CC6EE23081B41004DD7FC /* UserInfoDB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserInfoDB.xcdatamodel; sourceTree = "<group>"; };
 		84A2C17522E322160026DB83 /* UI-KARISHE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UI-KARISHE.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A2C17822E322160026DB83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -52,7 +60,7 @@
 		84F77649230D4B460047E592 /* CheckInternet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInternet.swift; sourceTree = "<group>"; };
 		84FB3E3722ED7BD4006F2A31 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		84FB3E3922ED8CAF006F2A31 /* ForgotPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassViewController.swift; sourceTree = "<group>"; };
-		84FDDCF422F0319400EF203E /* TokenServiceClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenServiceClass.swift; sourceTree = "<group>"; };
+		84FDDCF422F0319400EF203E /* FreelancerTokenServiceClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreelancerTokenServiceClass.swift; sourceTree = "<group>"; };
 		84FE22B322F179DA006E6F2F /* LoginServiceClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginServiceClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,9 +85,11 @@
 				84AB5C0522E5D52F00A0F741 /* verifyPageViewController.swift */,
 				84FB3E3722ED7BD4006F2A31 /* LogInViewController.swift */,
 				84FB3E3922ED8CAF006F2A31 /* ForgotPassViewController.swift */,
-				8424D81022F190E400003B48 /* HomePageViewController.swift */,
+				8424D81022F190E400003B48 /* EmpPageViewController.swift */,
+				84653BF723112C0200D48184 /* FrePageViewController.swift */,
 				8431B0E022E43D7800C0A45B /* CustomCells */,
-				8424D81422F1962100003B48 /* mainNavigationBar.swift */,
+				8424D81422F1962100003B48 /* empNavigationBar.swift */,
+				84653BF523112B4A00D48184 /* freNavigationBar.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -104,10 +114,12 @@
 		8431B0E122E43D9900C0A45B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				84653BF1231114FF00D48184 /* LogInClass.swift */,
+				84F6405322E6EF8700AA65F5 /* UserClassForPassData.swift */,
 				84FDDCF322F0316C00EF203E /* JSON Classes */,
 				84C9F8DD22E48DED00DB3367 /* Extentions */,
-				84F6405322E6EF8700AA65F5 /* UserClassForPassData.swift */,
 				849CC6ED23081B41004DD7FC /* UserInfoDB.xcdatamodeld */,
+				84F8507E23127D9100F4CAF5 /* jsonsssss */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -160,10 +172,18 @@
 			path = "Support Files";
 			sourceTree = "<group>";
 		};
+		84F8507E23127D9100F4CAF5 /* jsonsssss */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = jsonsssss;
+			sourceTree = "<group>";
+		};
 		84FDDCF322F0316C00EF203E /* JSON Classes */ = {
 			isa = PBXGroup;
 			children = (
-				84FDDCF422F0319400EF203E /* TokenServiceClass.swift */,
+				84FDDCF422F0319400EF203E /* FreelancerTokenServiceClass.swift */,
+				84653BF92311647500D48184 /* employerTokenServiceClass.swift */,
 				84FE22B322F179DA006E6F2F /* LoginServiceClass.swift */,
 			);
 			path = "JSON Classes";
@@ -197,7 +217,7 @@
 				84A2C17122E322160026DB83 /* Sources */,
 				84A2C17222E322160026DB83 /* Frameworks */,
 				84A2C17322E322160026DB83 /* Resources */,
-				DE49E88CE46A5B7E1A00FA02 /* [CP] Embed Pods Frameworks */,
+				D739DC42C7041AFCFDAC9CA8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -277,7 +297,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DE49E88CE46A5B7E1A00FA02 /* [CP] Embed Pods Frameworks */ = {
+		D739DC42C7041AFCFDAC9CA8 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -308,20 +328,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84653BF2231114FF00D48184 /* LogInClass.swift in Sources */,
 				84AB5C0622E5D52F00A0F741 /* verifyPageViewController.swift in Sources */,
 				84FB3E3822ED7BD4006F2A31 /* LogInViewController.swift in Sources */,
 				84C9F8DF22E48E0700DB3367 /* extentions.swift in Sources */,
 				849CC6EF23081B41004DD7FC /* UserInfoDB.xcdatamodeld in Sources */,
-				84FDDCF522F0319400EF203E /* TokenServiceClass.swift in Sources */,
+				84FDDCF522F0319400EF203E /* FreelancerTokenServiceClass.swift in Sources */,
 				84F7764A230D4B460047E592 /* CheckInternet.swift in Sources */,
 				84DF014622E4498B00D9A06C /* RegisterPageViewController.swift in Sources */,
 				84A2C18B22E32DC30026DB83 /* CVAuthPageCustomCell.swift in Sources */,
 				84F6405422E6EF8700AA65F5 /* UserClassForPassData.swift in Sources */,
-				8424D81122F190E400003B48 /* HomePageViewController.swift in Sources */,
+				8424D81122F190E400003B48 /* EmpPageViewController.swift in Sources */,
+				84653BF623112B4A00D48184 /* freNavigationBar.swift in Sources */,
 				84DF014822E44F6F00D9A06C /* DoRegisterViewController.swift in Sources */,
+				84653BF823112C0200D48184 /* FrePageViewController.swift in Sources */,
 				84FB3E3A22ED8CAF006F2A31 /* ForgotPassViewController.swift in Sources */,
+				84653BFA2311647500D48184 /* employerTokenServiceClass.swift in Sources */,
 				84FE22B422F179DA006E6F2F /* LoginServiceClass.swift in Sources */,
-				8424D81522F1962100003B48 /* mainNavigationBar.swift in Sources */,
+				8424D81522F1962100003B48 /* empNavigationBar.swift in Sources */,
 				84A2C17B22E322160026DB83 /* introViewController.swift in Sources */,
 				84A2C17922E322160026DB83 /* AppDelegate.swift in Sources */,
 			);

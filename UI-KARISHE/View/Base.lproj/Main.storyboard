@@ -365,10 +365,10 @@
             </objects>
             <point key="canvasLocation" x="1600" y="908"/>
         </scene>
-        <!--Home Page View Controller-->
+        <!--Emp Page View Controller-->
         <scene sceneID="LGw-ld-8oS">
             <objects>
-                <viewController storyboardIdentifier="HomePageViewController" id="TAL-5v-XXp" customClass="HomePageViewController" customModule="UI_KARISHE" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomePageViewController" id="TAL-5v-XXp" customClass="EmpPageViewController" customModule="UI_KARISHE" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Uhy-Op-qjM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -379,9 +379,9 @@
                                 <color key="backgroundColor" red="0.89813512559999997" green="0.30381837140000001" blue="0.1236591496" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0c4-Qw-SEW">
-                                <rect key="frame" x="53" y="126" width="41.666666666666657" height="91"/>
+                                <rect key="frame" x="53" y="126" width="274" height="91"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="91" id="Pcd-iG-nZt"/>
+                                    <constraint firstAttribute="height" constant="91" id="c4d-iw-9fx"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -390,9 +390,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="0c4-Qw-SEW" firstAttribute="leading" secondItem="Y2p-HQ-8ig" secondAttribute="leading" constant="53" id="R8X-Eo-ecM"/>
-                            <constraint firstItem="Y2p-HQ-8ig" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="0c4-Qw-SEW" secondAttribute="trailing" symbolic="YES" id="apX-w6-qFT"/>
-                            <constraint firstItem="0c4-Qw-SEW" firstAttribute="top" secondItem="Y2p-HQ-8ig" secondAttribute="top" constant="62" id="gp1-u2-fEj"/>
+                            <constraint firstItem="0c4-Qw-SEW" firstAttribute="leading" secondItem="Y2p-HQ-8ig" secondAttribute="leading" constant="53" id="4iG-zy-vVv"/>
+                            <constraint firstItem="0c4-Qw-SEW" firstAttribute="top" secondItem="Y2p-HQ-8ig" secondAttribute="top" constant="62" id="GWV-av-wIj"/>
+                            <constraint firstItem="Y2p-HQ-8ig" firstAttribute="trailing" secondItem="0c4-Qw-SEW" secondAttribute="trailing" constant="87" id="IKc-cJ-kz9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Y2p-HQ-8ig"/>
                     </view>
@@ -404,6 +404,46 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c1X-rN-O0r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4823.188405797102" y="-183.42391304347828"/>
+        </scene>
+        <!--Fre Page View Controller-->
+        <scene sceneID="ygM-MM-8Rx">
+            <objects>
+                <viewController storyboardIdentifier="FrePageViewController" id="9vk-ib-UZa" customClass="FrePageViewController" customModule="UI_KARISHE" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1Ne-Rp-GJ2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e8z-Ii-fAB">
+                                <rect key="frame" x="87" y="252" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.2890357449" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Klc-j1-izv">
+                                <rect key="frame" x="61" y="96" width="266" height="88"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="88" id="JoV-QH-VEM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="SRz-m6-uL4" firstAttribute="trailing" secondItem="Klc-j1-izv" secondAttribute="trailing" constant="87" id="9fo-Tv-Goz"/>
+                            <constraint firstItem="Klc-j1-izv" firstAttribute="leading" secondItem="SRz-m6-uL4" secondAttribute="leading" constant="61" id="uGu-Nn-CXE"/>
+                            <constraint firstItem="Klc-j1-izv" firstAttribute="top" secondItem="SRz-m6-uL4" secondAttribute="top" constant="32" id="zDN-G6-aUS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="SRz-m6-uL4"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="nzj-3m-9qY"/>
+                    <connections>
+                        <outlet property="textLabel" destination="Klc-j1-izv" id="WVj-Cd-Ve5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eA8-ed-Vuf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4823" y="567"/>
         </scene>
         <!--Register Page View Controller-->
         <scene sceneID="8Qx-oK-bZf">
@@ -737,7 +777,7 @@
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="کد ۶ رقمی ارسال شده را وارد کنید        " textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o3R-C9-thi">
                                                 <rect key="frame" x="0.0" y="0.0" width="311.66666666666669" height="105.33333333333333"/>
                                                 <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sms2" translatesAutoresizingMaskIntoConstraints="NO" id="96j-vJ-is0">
@@ -816,10 +856,10 @@
             </objects>
             <point key="canvasLocation" x="-259.4202898550725" y="-465.48913043478262"/>
         </scene>
-        <!--Main Navigation Bar-->
+        <!--Emp Navigation Bar-->
         <scene sceneID="qDN-JW-zgm">
             <objects>
-                <navigationController storyboardIdentifier="mainNavigationBar" automaticallyAdjustsScrollViewInsets="NO" id="MwB-AG-hgo" customClass="mainNavigationBar" customModule="UI_KARISHE" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="empNavigationBar" automaticallyAdjustsScrollViewInsets="NO" id="MwB-AG-hgo" customClass="empNavigationBar" customModule="UI_KARISHE" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pmK-yw-43p">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
@@ -834,6 +874,24 @@
             </objects>
             <point key="canvasLocation" x="3915.9420289855075" y="-183.42391304347828"/>
         </scene>
+        <!--Fre Navigation Bar-->
+        <scene sceneID="DSs-YF-SP6">
+            <objects>
+                <navigationController storyboardIdentifier="freNavigationBar" automaticallyAdjustsScrollViewInsets="NO" id="hwk-W6-VbT" customClass="freNavigationBar" customModule="UI_KARISHE" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eCl-pD-BLR">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9vk-ib-UZa" kind="relationship" relationship="rootViewController" id="Ea5-Bl-3dA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ayP-6Y-E3H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3916" y="567"/>
+        </scene>
     </scenes>
     <resources>
         <image name="email" width="32" height="32"/>
@@ -847,7 +905,7 @@
         <image name="verifypass" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Hbc-lY-hTj"/>
+        <segue reference="Ncl-eN-rOf"/>
         <segue reference="FjY-qw-Rmq"/>
     </inferredMetricsTieBreakers>
 </document>

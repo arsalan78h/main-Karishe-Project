@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreData
-class HomePageViewController: UIViewController {
+class EmpPageViewController: UIViewController {
     
     @IBOutlet weak var exampleLabel: UILabel!
     
@@ -19,8 +19,8 @@ class HomePageViewController: UIViewController {
         super.viewDidLoad()
         //load user data from data base
         loadCoreData()
-        
-        exampleLabel.text = userInfos[0].showName
+        let newS : String = userInfos[0].userRole! + userInfos[0].showName!
+        exampleLabel.text = newS
     }
     //MARK: -Load user data from data base
     func loadCoreData() {

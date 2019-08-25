@@ -1,11 +1,10 @@
-
 import Foundation
 
-// MARK: - TokenClass
-struct TokenClass: Codable {
+// MARK: - FreelancerTokenClass
+struct FreelancerTokenClass: Codable {
     let token: String
     let tokenExpires: Int
-    let user: User
+    let user: UserFre
     
     enum CodingKeys: String, CodingKey {
         case token
@@ -13,15 +12,16 @@ struct TokenClass: Codable {
         case user
     }
 }
+
 // MARK: - User
-struct User: Codable {
-    let data: DataClass
+struct UserFre: Codable {
+    let data: DataClassFre
     let id: Int
-    let caps: Caps
+    let caps: CapsFre
     let capKey: String
     let roles: [String]
-    let allcaps: Allcaps
-    let filter: JSONNull?
+    let allcaps: AllcapsFre
+    let filter: JSONNullFre?
     
     enum CodingKeys: String, CodingKey {
         case data
@@ -33,7 +33,7 @@ struct User: Codable {
 }
 
 // MARK: - Allcaps
-struct Allcaps: Codable {
+struct AllcapsFre: Codable {
     let read, editPosts, deletePosts, editOthersAEPrivateMessage: Bool
     let visualChat, freelancer: Bool
     
@@ -48,12 +48,12 @@ struct Allcaps: Codable {
 }
 
 // MARK: - Caps
-struct Caps: Codable {
+struct CapsFre: Codable {
     let freelancer: Bool
 }
 
 // MARK: - DataClass
-struct DataClass: Codable {
+struct DataClassFre: Codable {
     let id, userLogin, userPass, userNicename: String
     let userEmail, userURL, userRegistered, userActivationKey: String
     let userStatus, displayName: String
@@ -74,9 +74,9 @@ struct DataClass: Codable {
 
 // MARK: - Encode/decode helpers
 
-class JSONNull: Codable, Hashable {
+class JSONNullFre: Codable, Hashable {
     
-    public static func == (lhs: JSONNull, rhs: JSONNull) -> Bool {
+    public static func == (lhs: JSONNullFre, rhs: JSONNullFre) -> Bool {
         return true
     }
     

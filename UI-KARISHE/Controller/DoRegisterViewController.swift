@@ -221,7 +221,6 @@ class DoRegisterViewController: UIViewController , UITextFieldDelegate {
     }
 ////////////////////////////////////////////////////////////////////////////////////
     @objc func goToVerifyCodeVC() {
-     //   userDataPassing()
         let nextVc = self.storyboard?.instantiateViewController(withIdentifier: "verifyPageViewController") as! verifyPageViewController
         passDataToNextVC(vc: nextVc)
         self.navigationController?.pushViewController(nextVc, animated: true)

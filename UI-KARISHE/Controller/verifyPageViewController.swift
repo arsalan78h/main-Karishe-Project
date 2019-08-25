@@ -119,16 +119,55 @@ class verifyPageViewController: UIViewController {
         task.resume()
     }
     @objc func enterButt() {
-        goToHomePage()
-    }
-    func goToHomePage() {
-        DispatchQueue.main.async
-            {
-                let homePage = self.storyboard?.instantiateViewController(withIdentifier: "mainNavigationBar") as! mainNavigationBar
-                let appDelegate = UIApplication.shared.delegate
-                appDelegate?.window??.rootViewController = homePage
+        let parameters: [String: Any] = [
+            "ae_redirect_url": "https://www.karishe.com" ,
+            "user_login": saveUserData.user_email ,
+            "user_pass": saveUserData.user_pass ,
+            "remember": "on" ,
+            "do": "login" ,
+            "action": "ae-sync-user" ,
+            "method": "read"
+        ]
+//        let parameters: [String: Any] = [
+//            "ae_redirect_url": "https://www.karishe.com" ,
+//            "user_login": "arsalan78h@gmail.com" ,
+//            "user_pass": "arsalan78" ,
+//            "remember": "on" ,
+//            "do": "login" ,
+//            "action": "ae-sync-user" ,
+//            "method": "read"
+//        ]
+        let pas = LoginCL()
+        
+        if saveUserData.role == "employer" {
+            print("enter as a employer")
+        let empPage = self.storyboard?.instantiateViewController(withIdentifier: "empNavigationBar") as! empNavigationBar
+            pas.logInFunc(urlOfFunc: "https://www.karishe.com/wp-admin/admin-ajax.php", parameters: parameters , user_pass: saveUserData.user_pass, nv: empPage )
         }
+        
+        else if saveUserData.role == "freelancer" {
+            print("enter as a freelancer")
+            let frePage = self.storyboard?.instantiateViewController(withIdentifier: "freNavigationBar") as! freNavigationBar
+            pas.logInFunc(urlOfFunc: "https://www.karishe.com/wp-admin/admin-ajax.php", parameters: parameters , user_pass: saveUserData.user_pass, nv: frePage )
+        }
+        
+        
     }
+        
+        
+        
+        
+        
+//        goToHomePage()
+    
+//    func goToHomePage() {
+//        DispatchQueue.main.async
+//            {
+//                let homePage = self.storyboard?.instantiateViewController(withIdentifier: "mainNavigationBar") as! mainNavigationBar
+//                let appDelegate = UIApplication.shared.delegate
+//                appDelegate?.window??.rootViewController = homePage
+//        }
+//    }
     
     
     
