@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import UIKit
 
 /////////// extentions for POST servvice member ship
 extension Dictionary {

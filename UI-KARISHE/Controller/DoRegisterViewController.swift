@@ -137,13 +137,15 @@ class DoRegisterViewController: UIViewController , UITextFieldDelegate {
     //MARK: - Tap Register Button///////////////////////////////////////////////
     @IBAction func registerButt(_ sender: Any) {
         view.endEditing(true)
+        showActivityIndicator("انجام عملیات..." , haveBlurEffect: true)
+        
         if (userPhoneNum.hasText == false || userProfileName.hasText == false || userMail.hasText == false) {
             //alert
             DispatchQueue.main.async {
                  _ = SCLAlertView().showError("مشکل در اطلاعات وارد شده", subTitle:"لطفاهمه اطلاعات را وارد کنید", closeButtonTitle:"تایید")
+                self.hideActivityIndicator()
+                
             }
-           
-            print("please complete information")
         } else {
             
             let url = URL(string: "https://www.karishe.com/wp-json/wp/v2/check-user")!
@@ -180,22 +182,22 @@ class DoRegisterViewController: UIViewController , UITextFieldDelegate {
                   //  if responseString == "000" {
                         //alert
                     if (charResponseString[10] == "0") && (charResponseString[23] == "0") && (charResponseString[33] == "0") {
-                        print("you can create new account")
-                        DispatchQueue.main.async {
-                        
-                            
-                            let appearance = SCLAlertView.SCLAppearance(
-                                showCloseButton: false)
-                            let alertView = SCLAlertView(appearance: appearance)
-                            alertView.showSuccess("No button", subTitle: "create no butt success alert")
-                            alertView.addButton("تایید", target:self, selector:Selector(("goToVerifyCodeVC")))
-                            alertView.showSuccess("ارسال کد", subTitle: "کد تایید برای شما ارسال شد")
-                        }
+                            DispatchQueue.main.async {
+                                let appearance = SCLAlertView.SCLAppearance(
+                                    showCloseButton: false)
+                                let alertView = SCLAlertView(appearance: appearance)
+                                alertView.showSuccess("No button", subTitle: "create no butt success alert")
+                                alertView.addButton("تایید", target:self, selector:Selector(("goToVerifyCodeVC")))
+                                alertView.showSuccess("ارسال کد", subTitle: "کد تایید برای شما ارسال شد")
+                                self.hideActivityIndicator()
+                            }
                         //10
                     }else if charResponseString[10] == "1" {
                         //alert
+                        
                         DispatchQueue.main.async {
                              _ = SCLAlertView().showWarning("توجه", subTitle: "این شماره موبایل قبلا ثیت شده")
+                            self.hideActivityIndicator()
                         }
                        
                         print("there is phone number")
@@ -204,6 +206,7 @@ class DoRegisterViewController: UIViewController , UITextFieldDelegate {
                         //alert
                         DispatchQueue.main.async {
                            _ = SCLAlertView().showWarning("توجه", subTitle: "این نام کاربری قبلا ثبت شده")
+                            self.hideActivityIndicator()
                         }
                         print("there is user name ")
                         //33
@@ -211,6 +214,7 @@ class DoRegisterViewController: UIViewController , UITextFieldDelegate {
                         //alert
                         DispatchQueue.main.async {
                             _ = SCLAlertView().showWarning("توجه", subTitle: "این ایمیل قبلا ثبت شده ")
+                            self.hideActivityIndicator()
                         }
                         print("there is email")
                     }

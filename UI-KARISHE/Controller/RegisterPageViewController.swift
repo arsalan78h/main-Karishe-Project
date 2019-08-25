@@ -24,7 +24,7 @@ class RegisterPageViewController: UIViewController {
     }
     //employer
     @IBAction func employerButt(_ sender: Any) {
-    roleFlag = true
+        roleFlag = true
     }
     //freelancer
     @IBAction func freelancerButt(_ sender: Any) {

@@ -62,6 +62,8 @@ class verifyPageViewController: UIViewController {
     //MARK: - Tap done Button
     @IBAction func verifyCodeButt(_ sender: Any) {
         view.endEditing(true)
+        showActivityIndicator("انجام عملیات...", haveBlurEffect: false)
+        
         let url = URL(string: "https://www.karishe.com/wp-admin/admin-ajax.php")!
         var request = URLRequest(url: url)
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
@@ -104,6 +106,7 @@ class verifyPageViewController: UIViewController {
             if charResponseString[11] == "f" {
                 DispatchQueue.main.async {
                     _ = SCLAlertView().showError("کد وارد شده اشتباه است", subTitle:"", closeButtonTitle:"تایید")
+                    self.hideActivityIndicator()
                 }
             }else{
                 //
@@ -113,12 +116,16 @@ class verifyPageViewController: UIViewController {
                     let alertView = SCLAlertView(appearance: appearance)
                     alertView.addButton("ورود", target:self, selector:Selector(("enterButt")))
                     alertView.showSuccess("ثبت نام باموفقیت انجام شد", subTitle:"")
+                    self.hideActivityIndicator()
                 }
             }
         }
         task.resume()
     }
     @objc func enterButt() {
+//        DispatchQueue.main.async {
+//            self.showActivityIndicator("انجام عملیات...")
+//        }
         let parameters: [String: Any] = [
             "ae_redirect_url": "https://www.karishe.com" ,
             "user_login": saveUserData.user_email ,
@@ -128,15 +135,7 @@ class verifyPageViewController: UIViewController {
             "action": "ae-sync-user" ,
             "method": "read"
         ]
-//        let parameters: [String: Any] = [
-//            "ae_redirect_url": "https://www.karishe.com" ,
-//            "user_login": "arsalan78h@gmail.com" ,
-//            "user_pass": "arsalan78" ,
-//            "remember": "on" ,
-//            "do": "login" ,
-//            "action": "ae-sync-user" ,
-//            "method": "read"
-//        ]
+        
         let pas = LoginCL()
         
         if saveUserData.role == "employer" {
@@ -150,24 +149,7 @@ class verifyPageViewController: UIViewController {
             let frePage = self.storyboard?.instantiateViewController(withIdentifier: "freNavigationBar") as! freNavigationBar
             pas.logInFunc(urlOfFunc: "https://www.karishe.com/wp-admin/admin-ajax.php", parameters: parameters , user_pass: saveUserData.user_pass, nv: frePage )
         }
-        
-        
     }
-        
-        
-        
-        
-        
-//        goToHomePage()
-    
-//    func goToHomePage() {
-//        DispatchQueue.main.async
-//            {
-//                let homePage = self.storyboard?.instantiateViewController(withIdentifier: "mainNavigationBar") as! mainNavigationBar
-//                let appDelegate = UIApplication.shared.delegate
-//                appDelegate?.window??.rootViewController = homePage
-//        }
-//    }
     
     
     
