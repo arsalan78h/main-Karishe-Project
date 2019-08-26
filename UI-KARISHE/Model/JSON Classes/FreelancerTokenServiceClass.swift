@@ -84,6 +84,10 @@ class JSONNullFre: Codable, Hashable {
         return 0
     }
     
+    public func hash(into hasher: inout Hasher) {
+        // No-op
+    }
+    
     public init() {}
     
     public required init(from decoder: Decoder) throws {
