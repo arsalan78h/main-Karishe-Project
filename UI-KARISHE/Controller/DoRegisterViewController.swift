@@ -37,6 +37,13 @@ class DoRegisterViewController: UIViewController , UITextFieldDelegate {
         
         setUpDoRegisterViewController()
     }
+    override func viewDidAppear(_ animated: Bool) {
+        
+        if !CheckInternet.Connection(){
+            
+            _ = SCLAlertView().showError("مشکل در اتصال اینترت", subTitle:"دوباره سعی کنید", closeButtonTitle:"تایید")
+        }
+    }
     
     //MARK: - setting up Keyboard /////////////////////////////////////
     

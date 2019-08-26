@@ -13,7 +13,7 @@
         <!--Intro View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="introViewController" customModule="UI_KARISHE" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="introViewController" id="BYZ-38-t0r" customClass="introViewController" customModule="UI_KARISHE" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -387,12 +387,26 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nmI-YZ-0bi">
+                                <rect key="frame" x="87" y="555" width="240" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="5IZ-xZ-fDd"/>
+                                    <constraint firstAttribute="height" constant="60" id="Orw-Va-3Kj"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="logOutExampel:" destination="TAL-5v-XXp" eventType="touchUpInside" id="1Ib-Q2-7Pf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="nmI-YZ-0bi" firstAttribute="leading" secondItem="Y2p-HQ-8ig" secondAttribute="leading" constant="87" id="1or-sv-npU"/>
                             <constraint firstItem="0c4-Qw-SEW" firstAttribute="leading" secondItem="Y2p-HQ-8ig" secondAttribute="leading" constant="53" id="4iG-zy-vVv"/>
                             <constraint firstItem="0c4-Qw-SEW" firstAttribute="top" secondItem="Y2p-HQ-8ig" secondAttribute="top" constant="62" id="GWV-av-wIj"/>
                             <constraint firstItem="Y2p-HQ-8ig" firstAttribute="trailing" secondItem="0c4-Qw-SEW" secondAttribute="trailing" constant="87" id="IKc-cJ-kz9"/>
+                            <constraint firstItem="Y2p-HQ-8ig" firstAttribute="trailing" secondItem="nmI-YZ-0bi" secondAttribute="trailing" constant="87" id="InY-rn-mNI"/>
+                            <constraint firstItem="Y2p-HQ-8ig" firstAttribute="bottom" secondItem="nmI-YZ-0bi" secondAttribute="bottom" constant="121" id="pIZ-NA-06b"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Y2p-HQ-8ig"/>
                     </view>
@@ -427,11 +441,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uSC-PV-xT7">
+                                <rect key="frame" x="87" y="572" width="240" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="De4-3K-eKQ"/>
+                                    <constraint firstAttribute="width" constant="240" id="E2A-nc-nX9"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="logOutAccount:" destination="9vk-ib-UZa" eventType="touchUpInside" id="xGw-zu-28e"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="uSC-PV-xT7" firstAttribute="leading" secondItem="SRz-m6-uL4" secondAttribute="leading" constant="87" id="0Zi-cY-wvP"/>
                             <constraint firstItem="SRz-m6-uL4" firstAttribute="trailing" secondItem="Klc-j1-izv" secondAttribute="trailing" constant="87" id="9fo-Tv-Goz"/>
+                            <constraint firstItem="SRz-m6-uL4" firstAttribute="bottom" secondItem="uSC-PV-xT7" secondAttribute="bottom" constant="104" id="M1e-zz-frT"/>
                             <constraint firstItem="Klc-j1-izv" firstAttribute="leading" secondItem="SRz-m6-uL4" secondAttribute="leading" constant="61" id="uGu-Nn-CXE"/>
+                            <constraint firstItem="SRz-m6-uL4" firstAttribute="trailing" secondItem="uSC-PV-xT7" secondAttribute="trailing" constant="87" id="yfi-tN-6Ok"/>
                             <constraint firstItem="Klc-j1-izv" firstAttribute="top" secondItem="SRz-m6-uL4" secondAttribute="top" constant="32" id="zDN-G6-aUS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SRz-m6-uL4"/>
@@ -838,10 +866,10 @@
             </objects>
             <point key="canvasLocation" x="3146" y="-1096"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--First Navigation Bar-->
         <scene sceneID="Uao-So-Lm6">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5wx-fM-8iB" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="firstNavigationBar" automaticallyAdjustsScrollViewInsets="NO" id="5wx-fM-8iB" customClass="firstNavigationBar" customModule="UI_KARISHE" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="A1H-xg-Vyd">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>

@@ -7,40 +7,35 @@
 //
 
 import UIKit
-import CoreData
+import SwiftKeychainWrapper
 class EmpPageViewController: UIViewController {
     
     @IBOutlet weak var exampleLabel: UILabel!
     
-    var userInfos = [UserInfo]()
+  //  var userInfos = [UserInfo]()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //load user data from data base
-        loadCoreData()
+        var userInfos = loadCoreData()
         let newS : String = userInfos[0].userRole! + userInfos[0].showName!
         exampleLabel.text = newS
     }
-    //MARK: -Load user data from data base
-    func loadCoreData() {
-        let request : NSFetchRequest<UserInfo> = UserInfo.fetchRequest()
-        do {
-            userInfos = try context.fetch(request)
-        } catch  {
-            print("error in fetching data \(error)")
+    
+    @IBAction func logOutExampel(_ sender: Any) {
+        showActivityIndicator("" , haveBlurEffect: false)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            KeychainWrapper.standard.removeAllKeys()
+            deleteDataBase()
+            let homePage = self.storyboard?.instantiateViewController(withIdentifier: "firstNavigationBar") as! firstNavigationBar
+            DispatchQueue.main.async
+                {
+                    self.present(homePage, animated: true, completion: nil)
+            }
         }
     }
-//    func loadcoreData(){
-//
-//        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "UserInfo")
-//        do {
-//            let result = try context.fetch(fetchRequest)
-//            for data in result as! [NSManagedObject] {
-//                print(data.value(forKey: "login") as! String)
-//                        }
-//        } catch {
-//            print("failed")
-//        }
-//    }
+    
+    
+    
+    
 }

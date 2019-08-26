@@ -7,28 +7,33 @@
 //
 
 import UIKit
-import CoreData
+import SwiftKeychainWrapper
 
 class FrePageViewController: UIViewController {
     var userInfos = [UserInfo]()
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    @IBOutlet weak var textLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        loadCoreData()
+        var userInfos = loadCoreData()
         let newS : String = userInfos[0].userRole! + userInfos[0].showName!
         textLabel.text = newS
     }
-    @IBOutlet weak var textLabel: UILabel!
-    func loadCoreData() {
-        let request : NSFetchRequest<UserInfo> = UserInfo.fetchRequest()
-        do {
-            userInfos = try context.fetch(request)
-        } catch  {
-            print("error in fetching data \(error)")
+
+    @IBAction func logOutAccount(_ sender: Any) {
+        showActivityIndicator("" , haveBlurEffect: false)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            KeychainWrapper.standard.removeAllKeys()
+            deleteDataBase()
+            let homePage = self.storyboard?.instantiateViewController(withIdentifier: "firstNavigationBar") as! firstNavigationBar
+            DispatchQueue.main.async
+                {
+                    self.present(homePage, animated: true, completion: nil)
+            }
         }
     }
-
     /*
     // MARK: - Navigation
 

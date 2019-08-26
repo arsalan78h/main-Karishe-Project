@@ -17,6 +17,13 @@ class ForgotPassViewController: UIViewController {
 
         
     }
+    override func viewDidAppear(_ animated: Bool) {
+        
+        if !CheckInternet.Connection(){
+            
+            _ = SCLAlertView().showError("مشکل در اتصال اینترت", subTitle:"دوباره سعی کنید", closeButtonTitle:"تایید")
+        }
+    }
     //MARK: - SetUp View
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)

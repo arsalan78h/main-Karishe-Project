@@ -52,10 +52,21 @@ extension UIViewController {
         view.addSubview(blurEffectView)
         }
         
-        
-        effectView.contentView.addSubview(activityIndicator)
-        effectView.contentView.addSubview(strLabel)
-        view.addSubview(effectView)
+        if title == "" {
+            let eff = UIVisualEffectView(effect: UIBlurEffect(style: .light))
+            eff.layer.cornerRadius = 20
+            eff.layer.masksToBounds = true
+            eff.tag = 600
+            eff.frame = CGRect(x: view.frame.midX - 35  , y: view.frame.midY + 35 , width: 70, height: 70)
+            activityIndicator.frame = CGRect(x: 0, y: 0, width: 70 , height: 70)
+            activityIndicator.color = .darkGray
+            eff.contentView.addSubview(activityIndicator)
+            view.addSubview(eff)
+                }else {
+                    effectView.contentView.addSubview(activityIndicator)
+                    effectView.contentView.addSubview(strLabel)
+                    view.addSubview(effectView)
+                }
     }
     
     func hideActivityIndicator() {
@@ -63,20 +74,14 @@ extension UIViewController {
         let activityIndicator = view.viewWithTag(100) as? UIActivityIndicatorView
         let strLabel = view.viewWithTag(200) as? UILabel
         let effectView = view.viewWithTag(300) as? UIVisualEffectView
-        
+        let blurEffectView = view.viewWithTag(400) as? UIVisualEffectView
+        let eff = view.viewWithTag(600) as? UIVisualEffectView
         
         activityIndicator?.stopAnimating()
         activityIndicator?.removeFromSuperview()
         strLabel?.removeFromSuperview()
         effectView?.removeFromSuperview()
-        
-        for subview in view.subviews {
-            if subview.tag == 400 {
-                print("already added")
-                let blurEffectView = view.viewWithTag(400) as? UIVisualEffectView
-                blurEffectView?.removeFromSuperview()
-            }
-        
+        blurEffectView?.removeFromSuperview()
+        eff?.removeFromSuperview()
     }
-}
 }

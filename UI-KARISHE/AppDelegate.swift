@@ -24,17 +24,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        func resetAllRecords(in entity : String) // entity = Your_Entity_Name
 //        {
                 //Clean Data Base
-                let context = ( UIApplication.shared.delegate as! AppDelegate ).persistentContainer.viewContext
-                let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "UserInfo")
-                let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
-                do
-                {
-                    try context.execute(deleteRequest)
-                }
-                catch
-                {
-                    print ("There was an error")
-                }
+//                let context = ( UIApplication.shared.delegate as! AppDelegate ).persistentContainer.viewContext
+//                let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "UserInfo")
+//                let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
+//                do
+//                {
+//                    try context.execute(deleteRequest)
+//                }
+//                catch
+//                {
+//                    print ("There was an error")
+//                }
      //   }
 ////////////////////////////////////////////////////////////////////////////////
         let accessToken: String? = KeychainWrapper.standard.string(forKey: "accessToken")
@@ -44,7 +44,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let homePage = mainStoryboard.instantiateViewController(withIdentifier: "EmpNavigationBar") as! empNavigationBar
             self.window?.rootViewController = homePage
         }
-        
         return true
     }
 /////////////////////////////////////////////////////////////////////////////////
