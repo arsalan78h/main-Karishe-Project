@@ -58,5 +58,9 @@ class introViewController: UIViewController , UICollectionViewDataSource , UICol
         
         return 0
     }
+    
+//    private func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+//        return CGSize(width: 10, height: 10)
+//    }
 }
 

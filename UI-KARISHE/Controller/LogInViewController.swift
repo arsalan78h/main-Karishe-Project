@@ -71,6 +71,15 @@ class LogInViewController: UIViewController , UITextFieldDelegate {
     
     //MARK: - Tap Log in Butoon
     @IBAction func LogInMainButt(_ sender: UIButton) {
+        if logInUserId.hasText == false || LogInUserPass.hasText == false {
+            DispatchQueue.main.async {
+                _ = SCLAlertView().showError("اطلاعات را وارد کنید", subTitle: "" , closeButtonTitle: "تایید")
+                self.hideActivityIndicator()
+            }
+            
+        }
+//        showActivityIndicator("", haveBlurEffect: false)
+        showActivityIndicator("انجام عملیات...", haveBlurEffect: false)
         view.endEditing(true)
         
         let homePage = self.storyboard?.instantiateViewController(withIdentifier: "empNavigationBar") as! empNavigationBar

@@ -62,8 +62,8 @@ class verifyPageViewController: UIViewController {
     //MARK: - Tap done Button
     @IBAction func verifyCodeButt(_ sender: Any) {
         view.endEditing(true)
-        showActivityIndicator("انجام عملیات...", haveBlurEffect: false)
-        
+     //   showActivityIndicator("انجام عملیات...", haveBlurEffect: false)
+        showActivityIndicator("", haveBlurEffect: false)
         let url = URL(string: "https://www.karishe.com/wp-admin/admin-ajax.php")!
         var request = URLRequest(url: url)
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
@@ -126,6 +126,7 @@ class verifyPageViewController: UIViewController {
 //        DispatchQueue.main.async {
 //            self.showActivityIndicator("انجام عملیات...")
 //        }
+        showActivityIndicator("", haveBlurEffect: false)
         let parameters: [String: Any] = [
             "ae_redirect_url": "https://www.karishe.com" ,
             "user_login": saveUserData.user_email ,

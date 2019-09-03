@@ -24,11 +24,15 @@ import CoreData
    }
 
 func saveCoreData() {
-    let context = ( UIApplication.shared.delegate as! AppDelegate ).persistentContainer.viewContext
+    DispatchQueue.main.async {
+        let context = ( UIApplication.shared.delegate as! AppDelegate ).persistentContainer.viewContext
+    
+    
     do {
         try context.save()
     } catch  {
         print("error in saving core data \(error)")
+    }
     }
 }
 

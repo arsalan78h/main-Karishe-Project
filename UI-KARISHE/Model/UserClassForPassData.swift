@@ -20,17 +20,28 @@ class UserClassForPassData {
  //   var repeat_pass = ""
     var sms_active_code = ""
     
+    init() {
+        role = "anyRole"
+        first_name = "admin"
+        last_name = "admin"
+        mobile = "00000000000"
+        user_email = "admin@admin.com"
+        user_login = "admin admin"
+        user_pass = "admin"
+        sms_active_code = "000000"
+    }
     
-    init(therole : String , theFirst_name : String , theLast_name : String , theMobile : String , theUser_email : String , theuser_login : String , theuser_pass : String , theRepeat_pass : String , theSms_active_code : String) {
-        self.role = therole
-        self.first_name = theFirst_name
-        self.last_name = theLast_name
-        self.mobile = theMobile
-        self.user_email = theUser_email
-        self.user_login = theuser_login
-        self.user_pass = theuser_pass
+   convenience init(therole : String , theFirst_name : String , theLast_name : String , theMobile : String , theUser_email : String , theuser_login : String , theuser_pass : String , theRepeat_pass : String , theSms_active_code : String) {
+        self.init()
+        role = therole
+        first_name = theFirst_name
+        last_name = theLast_name
+        mobile = theMobile
+        user_email = theUser_email
+        user_login = theuser_login
+        user_pass = theuser_pass
      //   self.repeat_pass = theRepeat_pass
-        self.sms_active_code = theSms_active_code
+        sms_active_code = theSms_active_code
         
     }
     

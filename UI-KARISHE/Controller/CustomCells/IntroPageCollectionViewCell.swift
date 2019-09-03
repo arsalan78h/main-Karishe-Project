@@ -13,8 +13,8 @@ class CVAuthPageCustomCell: UICollectionViewCell {
     @IBOutlet weak var imageViewCell: UIImageView!
     
     override func awakeFromNib() {
-//        self.imageViewCell.clipsToBounds = true
-//        self.imageViewCell.contentMode = .scaleAspectFill
+        self.imageViewCell.clipsToBounds = true
+        self.imageViewCell.contentMode = .scaleAspectFit
         
     }
     

@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
         
         //MARK: - LogOut from account
-        KeychainWrapper.standard.removeAllKeys()
+      //  KeychainWrapper.standard.removeAllKeys()
 //        func resetAllRecords(in entity : String) // entity = Your_Entity_Name
 //        {
                 //Clean Data Base
@@ -41,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if accessToken != nil {
               // Take user to a home page
             let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let homePage = mainStoryboard.instantiateViewController(withIdentifier: "EmpNavigationBar") as! empNavigationBar
+            let homePage = mainStoryboard.instantiateViewController(withIdentifier: "empNavigationBar") as! empNavigationBar
             self.window?.rootViewController = homePage
         }
         return true

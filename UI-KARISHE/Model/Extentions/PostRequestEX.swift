@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-/////////// extentions for POST servvice member ship
+/////////// Extentions for POST service member ship
 extension Dictionary {
     func percentEscaped() -> String {
         return map { (key, value) in
