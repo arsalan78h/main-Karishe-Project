@@ -16,6 +16,7 @@
 		84653BFA2311647500D48184 /* employerTokenServiceClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84653BF92311647500D48184 /* employerTokenServiceClass.swift */; };
 		84770F572313B46000DDF196 /* firstNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84770F562313B46000DDF196 /* firstNavigationBar.swift */; };
 		84770F592313BD3300DDF196 /* CURDDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84770F582313BD3300DDF196 /* CURDDataBase.swift */; };
+		8478C0EA231E758A00F9D378 /* CategoriesServiceClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8478C0E9231E758A00F9D378 /* CategoriesServiceClass.swift */; };
 		849CC6EF23081B41004DD7FC /* UserInfoDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 849CC6ED23081B41004DD7FC /* UserInfoDB.xcdatamodeld */; };
 		84A2C17922E322160026DB83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2C17822E322160026DB83 /* AppDelegate.swift */; };
 		84A2C17B22E322160026DB83 /* introViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2C17A22E322160026DB83 /* introViewController.swift */; };
@@ -49,6 +50,7 @@
 		84653BF92311647500D48184 /* employerTokenServiceClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = employerTokenServiceClass.swift; sourceTree = "<group>"; };
 		84770F562313B46000DDF196 /* firstNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firstNavigationBar.swift; sourceTree = "<group>"; };
 		84770F582313BD3300DDF196 /* CURDDataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CURDDataBase.swift; sourceTree = "<group>"; };
+		8478C0E9231E758A00F9D378 /* CategoriesServiceClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesServiceClass.swift; sourceTree = "<group>"; };
 		849CC6EE23081B41004DD7FC /* UserInfoDB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserInfoDB.xcdatamodel; sourceTree = "<group>"; };
 		84A2C17522E322160026DB83 /* UI-KARISHE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UI-KARISHE.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A2C17822E322160026DB83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				84FDDCF422F0319400EF203E /* FreelancerTokenServiceClass.swift */,
 				84653BF92311647500D48184 /* employerTokenServiceClass.swift */,
 				84FE22B322F179DA006E6F2F /* LoginServiceClass.swift */,
+				8478C0E9231E758A00F9D378 /* CategoriesServiceClass.swift */,
 			);
 			path = "JSON Classes";
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				84AB5C0622E5D52F00A0F741 /* verifyPageViewController.swift in Sources */,
 				84FB3E3822ED7BD4006F2A31 /* LogInViewController.swift in Sources */,
 				84C9F8DF22E48E0700DB3367 /* PostRequestEX.swift in Sources */,
+				8478C0EA231E758A00F9D378 /* CategoriesServiceClass.swift in Sources */,
 				849CC6EF23081B41004DD7FC /* UserInfoDB.xcdatamodeld in Sources */,
 				84FDDCF522F0319400EF203E /* FreelancerTokenServiceClass.swift in Sources */,
 				84F7764A230D4B460047E592 /* CheckInternet.swift in Sources */,
