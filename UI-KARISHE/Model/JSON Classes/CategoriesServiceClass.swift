@@ -4,9 +4,9 @@
 
 import Foundation
 
-typealias Jsonstruct = [JsonstructElement]
+typealias Jsonstruct = [CategoriesJSON]
 
-struct JsonstructElement: Codable {
+struct CategoriesJSON: Codable {
     let termID: Int
     let name, slug: String
     let termGroup, termTaxonomyID: Int
