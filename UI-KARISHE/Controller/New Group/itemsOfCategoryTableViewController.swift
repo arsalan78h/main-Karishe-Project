@@ -11,22 +11,27 @@ import UIKit
 class itemsOfCategoryTableViewController: UITableViewController {
     
     
-    var items = MobileDevJSON(data: [mobileDevDatum](), paginate: "T##String", msg: "<#T##String#>", success: false, maxNumPages: 0, total: "T##String")
+    var items = MobileDevJSON(data: [mobileDevDatum](), paginate: "default0", msg: "default0", success: false, maxNumPages: 0, total: "default0")
+    var privateList = MobileDevJSON(data: [mobileDevDatum](), paginate: "default0", msg: "default0", success: false, maxNumPages: 0, total: "default0")
     
     var slugpass : String = ""
+    var cateNamePass = ""
+    var pageQuery = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        getDataForItemsOfCategories()
         
+        
+        getDataForItemsOfCategories(withPage: pageQuery)
+        
+    //    navigationItem.title = cateNamePass
         
         print(slugpass)
         
     }
-    var pageQuery = 1
-    func getDataForItemsOfCategories(){
-        let url = URL(string: "https://www.karishe.com/wp-admin/admin-ajax.php?query%5Bpost_type%5D=project&query%5Bpost_status%5D=publish&query%5Borderby%5D=et_budget&query%5Bplace_category%5D=&query%5Bmeta_key%5D=&query%5Bmeta_value%5D=&query%5Blocation%5D=&query%5Bshowposts%5D=&query%5Border%5D=DESC&query%5Bis_archive_project%5D=true&query%5Bpaginate%5D=page&page=1&paged=1&paginate=page&action=ae-fetch-projects&query%5Bproject_category%5D=\(slugpass)&query%5Bs%5D")
+    
+    func getDataForItemsOfCategories(withPage : Int){
+        let url = URL(string: "https://www.karishe.com/wp-admin/admin-ajax.php?query%5Bpost_type%5D=project&query%5Bpost_status%5D=publish&query%5Borderby%5D=et_budget&query%5Bplace_category%5D=&query%5Bmeta_key%5D=&query%5Bmeta_value%5D=&query%5Blocation%5D=&query%5Bshowposts%5D=&query%5Border%5D=DESC&query%5Bis_archive_project%5D=true&query%5Bpaginate%5D=page&page=\(pageQuery)&paged=1&paginate=page&action=ae-fetch-projects&query%5Bproject_category%5D=\(slugpass)&query%5Bs%5D")
         
         
 //        let queryParams : [String : String] = [
@@ -66,12 +71,18 @@ class itemsOfCategoryTableViewController: UITableViewController {
 //            }.joined(separator: "&")
 //
 //        let finalURL = components.url
-        
+      //  showActivityIndicator("Loading", haveBlurEffect: false)
         URLSession.shared.dataTask(with: url!) { (data, response, error) in
             do { if error == nil{
                 self.items = try JSONDecoder().decode(MobileDevJSON.self, from: data!)
+                
+                self.privateList.data.append(contentsOf: self.items.data)
+                
+                
+                
                 //                for _ in self.items.data{  //MobileDev
                 DispatchQueue.main.async {
+                 //   self.hideActivityIndicator()
                     self.tableView.reloadData()
                 }
                 //                    }
@@ -81,16 +92,7 @@ class itemsOfCategoryTableViewController: UITableViewController {
                 }
                 
                 print("-------------------------------")
-                let string1 = String(data: data!, encoding: String.Encoding.utf8) ?? "Data could not be printed"
-                print(string1)
-                print("-------------------------------")
-                print(self.items.data[0].postTitle)
-                print(self.items.data[5].postTitle)
-                print(".....................................................")
-                print(".....................................................")
-                
-                print(".....................................................")
-                
+          //      let string1 = String(data: data!, encoding: String.Encoding.utf8) ?? "Data could not be printed"
                 
                 }
             }catch{
@@ -103,14 +105,27 @@ class itemsOfCategoryTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     //    return pageQuery * items.data.count
-        return items.data.count
+//        return items.data.count
+        return privateList.data.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell : itemsOfCategoryCELL = tableView.dequeueReusableCell(withIdentifier: "itemsCell") as! itemsOfCategoryCELL
         
-        cell.titlePost.text = items.data[indexPath.row].postTitle
+        cell.titlePost.text = privateList.data[indexPath.row].postTitle
+        if indexPath.row == privateList.data.count - 1 {
+            if pageQuery < items.maxNumPages {
+                print("page inside = \(pageQuery - 1)")
+            pageQuery = pageQuery + 1
+            print("--------------------")
+                print("maxPage = \(items.maxNumPages)")
+                print("totalOBJ  = \(items.total)")
+                print(privateList.data.count)
+            print("--------------------")
+            getDataForItemsOfCategories(withPage: pageQuery)
+            }
+    }
         return cell
     }
 }

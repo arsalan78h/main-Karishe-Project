@@ -6,7 +6,7 @@
 import Foundation
 
 struct MobileDevJSON: Codable {
-    let data: [mobileDevDatum]
+    var data: [mobileDevDatum]
     let paginate, msg: String
     let success: Bool
     let maxNumPages: Int

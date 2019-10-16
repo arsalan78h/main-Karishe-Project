@@ -69,6 +69,7 @@ class ListCategoriesTableViewController: UITableViewController  {
     
     let vc = segue.destination as! itemsOfCategoryTableViewController
         if let indexPath = tableView.indexPathForSelectedRow {
+            vc.cateNamePass = categoriesItems[indexPath.row].name
             vc.slugpass = categoriesItems[indexPath.row].slug
     }
     }
