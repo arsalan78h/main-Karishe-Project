@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8406BBE92357447700444770 /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8406BBE72357447700444770 /* UITableViewCell+Extension.swift */; };
+		8406BBEA2357447700444770 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8406BBE82357447700444770 /* UITableView+Extension.swift */; };
+		8406BBED2357449000444770 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8406BBEB2357449000444770 /* ItemTableViewCell.swift */; };
+		8406BBEE2357449000444770 /* ItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8406BBEC2357449000444770 /* ItemTableViewCell.xib */; };
 		8421749C2330B9B70016F2AC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8421749B2330B9B70016F2AC /* ProfileViewController.swift */; };
 		8421749E2330FEA80016F2AC /* ListCategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8421749D2330FEA80016F2AC /* ListCategoriesTableViewController.swift */; };
 		8424D81122F190E400003B48 /* EmpPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8424D81022F190E400003B48 /* EmpPageViewController.swift */; };
@@ -34,7 +38,6 @@
 		84DF014822E44F6F00D9A06C /* DoRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DF014722E44F6F00D9A06C /* DoRegisterViewController.swift */; };
 		84F6405422E6EF8700AA65F5 /* UserClassForPassData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6405322E6EF8700AA65F5 /* UserClassForPassData.swift */; };
 		84F6F87B23320D3E0054850A /* itemsOfCategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6F87A23320D3E0054850A /* itemsOfCategoryTableViewController.swift */; };
-		84F6F87D233211F80054850A /* itemsOfCategoryCELL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6F87C233211F80054850A /* itemsOfCategoryCELL.swift */; };
 		84F7764A230D4B460047E592 /* CheckInternet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F77649230D4B460047E592 /* CheckInternet.swift */; };
 		84FB3E3822ED7BD4006F2A31 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FB3E3722ED7BD4006F2A31 /* LogInViewController.swift */; };
 		84FB3E3A22ED8CAF006F2A31 /* ForgotPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FB3E3922ED8CAF006F2A31 /* ForgotPassViewController.swift */; };
@@ -47,6 +50,10 @@
 		3F7806838099B0F347E87AAF /* Pods-UI-KARISHE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UI-KARISHE.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UI-KARISHE/Pods-UI-KARISHE.debug.xcconfig"; sourceTree = "<group>"; };
 		7A85BCBDA6B431906F774058 /* Pods_UI_KARISHE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UI_KARISHE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B619DDEFE701AA784B11C1A /* Pods-UI-KARISHE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UI-KARISHE.release.xcconfig"; path = "Pods/Target Support Files/Pods-UI-KARISHE/Pods-UI-KARISHE.release.xcconfig"; sourceTree = "<group>"; };
+		8406BBE72357447700444770 /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
+		8406BBE82357447700444770 /* UITableView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		8406BBEB2357449000444770 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
+		8406BBEC2357449000444770 /* ItemTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemTableViewCell.xib; sourceTree = "<group>"; };
 		8421749B2330B9B70016F2AC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		8421749D2330FEA80016F2AC /* ListCategoriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCategoriesTableViewController.swift; sourceTree = "<group>"; };
 		8424D81022F190E400003B48 /* EmpPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmpPageViewController.swift; sourceTree = "<group>"; };
@@ -76,7 +83,6 @@
 		84DF014722E44F6F00D9A06C /* DoRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoRegisterViewController.swift; sourceTree = "<group>"; };
 		84F6405322E6EF8700AA65F5 /* UserClassForPassData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserClassForPassData.swift; sourceTree = "<group>"; };
 		84F6F87A23320D3E0054850A /* itemsOfCategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = itemsOfCategoryTableViewController.swift; sourceTree = "<group>"; };
-		84F6F87C233211F80054850A /* itemsOfCategoryCELL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = itemsOfCategoryCELL.swift; sourceTree = "<group>"; };
 		84F77649230D4B460047E592 /* CheckInternet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInternet.swift; sourceTree = "<group>"; };
 		84FB3E3722ED7BD4006F2A31 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		84FB3E3922ED8CAF006F2A31 /* ForgotPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassViewController.swift; sourceTree = "<group>"; };
@@ -96,14 +102,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8421749A2330B9080016F2AC /* New Group */ = {
+		8406BBE62357446500444770 /* itemsOfCategory */ = {
+			isa = PBXGroup;
+			children = (
+				8406BBEB2357449000444770 /* ItemTableViewCell.swift */,
+				8406BBEC2357449000444770 /* ItemTableViewCell.xib */,
+			);
+			path = itemsOfCategory;
+			sourceTree = "<group>";
+		};
+		8421749A2330B9080016F2AC /* After Enter Controlles */ = {
 			isa = PBXGroup;
 			children = (
 				8421749B2330B9B70016F2AC /* ProfileViewController.swift */,
 				8421749D2330FEA80016F2AC /* ListCategoriesTableViewController.swift */,
 				84F6F87A23320D3E0054850A /* itemsOfCategoryTableViewController.swift */,
 			);
-			path = "New Group";
+			path = "After Enter Controlles";
 			sourceTree = "<group>";
 		};
 		8431B0DE22E43D3800C0A45B /* Controller */ = {
@@ -117,7 +132,7 @@
 				84FB3E3922ED8CAF006F2A31 /* ForgotPassViewController.swift */,
 				8424D81022F190E400003B48 /* EmpPageViewController.swift */,
 				84653BF723112C0200D48184 /* FrePageViewController.swift */,
-				8421749A2330B9080016F2AC /* New Group */,
+				8421749A2330B9080016F2AC /* After Enter Controlles */,
 				8431B0E022E43D7800C0A45B /* CustomCells */,
 				84770F5B2313C0C900DDF196 /* NavigationControllers */,
 			);
@@ -138,7 +153,7 @@
 			children = (
 				84A2C18A22E32DC30026DB83 /* IntroPageCollectionViewCell.swift */,
 				8443709C23310574006BF2A8 /* ListCategoriesCELL.swift */,
-				84F6F87C233211F80054850A /* itemsOfCategoryCELL.swift */,
+				8406BBE62357446500444770 /* itemsOfCategory */,
 			);
 			path = CustomCells;
 			sourceTree = "<group>";
@@ -211,6 +226,8 @@
 			children = (
 				84C9F8DE22E48E0700DB3367 /* PostRequestEX.swift */,
 				84575CA92312C806001BA043 /* ActivityIndicatorEX.swift */,
+				8406BBE82357447700444770 /* UITableView+Extension.swift */,
+				8406BBE72357447700444770 /* UITableViewCell+Extension.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -312,6 +329,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8406BBEE2357449000444770 /* ItemTableViewCell.xib in Resources */,
 				84A2C18322E322180026DB83 /* LaunchScreen.storyboard in Resources */,
 				84A2C18022E322180026DB83 /* Assets.xcassets in Resources */,
 				84A2C17E22E322160026DB83 /* Main.storyboard in Resources */,
@@ -375,8 +393,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				84653BF2231114FF00D48184 /* LogInClass.swift in Sources */,
+				8406BBE92357447700444770 /* UITableViewCell+Extension.swift in Sources */,
 				84F6F87B23320D3E0054850A /* itemsOfCategoryTableViewController.swift in Sources */,
 				84AB5C0622E5D52F00A0F741 /* verifyPageViewController.swift in Sources */,
+				8406BBED2357449000444770 /* ItemTableViewCell.swift in Sources */,
 				84FB3E3822ED7BD4006F2A31 /* LogInViewController.swift in Sources */,
 				84C9F8DF22E48E0700DB3367 /* PostRequestEX.swift in Sources */,
 				8478C0EA231E758A00F9D378 /* CategoriesServiceClass.swift in Sources */,
@@ -397,9 +417,9 @@
 				84653BF823112C0200D48184 /* FrePageViewController.swift in Sources */,
 				84FB3E3A22ED8CAF006F2A31 /* ForgotPassViewController.swift in Sources */,
 				84653BFA2311647500D48184 /* employerTokenServiceClass.swift in Sources */,
+				8406BBEA2357447700444770 /* UITableView+Extension.swift in Sources */,
 				84575CAA2312C806001BA043 /* ActivityIndicatorEX.swift in Sources */,
 				84FE22B422F179DA006E6F2F /* LoginServiceClass.swift in Sources */,
-				84F6F87D233211F80054850A /* itemsOfCategoryCELL.swift in Sources */,
 				8424D81522F1962100003B48 /* empNavigationBar.swift in Sources */,
 				8421749C2330B9B70016F2AC /* ProfileViewController.swift in Sources */,
 				84A2C17B22E322160026DB83 /* introViewController.swift in Sources */,

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemTableViewCell" rowHeight="200" id="KGk-i7-Jjw" customClass="ItemTableViewCell" customModule="UI_KARISHE" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FGs-zQ-y8J">
+                        <rect key="frame" x="8" y="8" width="398" height="184"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="طراحی UI/UX سامانه جامع نظارت بر ترافیک درسطح کشور" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PeC-ja-xmB">
+                                <rect key="frame" x="8" y="8" width="382" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="esm-W2-sQt"/>
+                                    <constraint firstAttribute="width" constant="382" id="gcr-4f-nSd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="مهارت: Material Design | Photoshop | sketch | website design | WordPress" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="okU-kE-gTh">
+                                <rect key="frame" x="8" y="89" width="382" height="62"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="382" id="OU7-AO-kHH"/>
+                                    <constraint firstAttribute="height" constant="62" id="VSD-Ij-kUt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="p9F-zW-O44" userLabel="Price Stack View">
+                                <rect key="frame" x="8" y="155" width="160" height="25"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" ۹۹،۹۹۹،۹۹۹تومان" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gDd-WO-gRK">
+                                        <rect key="frame" x="0.0" y="0.0" width="127" height="25"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemGreenColor" red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="price" translatesAutoresizingMaskIntoConstraints="NO" id="ugo-Dc-NDY">
+                                        <rect key="frame" x="135" y="0.0" width="25" height="25"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iy5-wh-F44" userLabel="Date Stack View">
+                                <rect key="frame" x="280" y="72" width="109.5" height="17"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="۱۳۸۸/۱۲/۲۵" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q3C-Xd-4uT">
+                                        <rect key="frame" x="0.0" y="0.0" width="70.5" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ارسال: " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qFn-yi-qlc">
+                                        <rect key="frame" x="70.5" y="0.0" width="39" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="پیشنهاد۹۹۹" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPi-Rn-5p3" userLabel="پیشنهاد:">
+                                <rect key="frame" x="305.5" y="157.5" width="84.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" systemColor="systemGreenColor" red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="okU-kE-gTh" firstAttribute="leading" secondItem="FGs-zQ-y8J" secondAttribute="leading" constant="8" id="5Ku-jE-fda"/>
+                            <constraint firstItem="p9F-zW-O44" firstAttribute="top" secondItem="okU-kE-gTh" secondAttribute="bottom" constant="4" id="5Pq-CM-pIl"/>
+                            <constraint firstAttribute="bottom" secondItem="aPi-Rn-5p3" secondAttribute="bottom" constant="6" id="Bik-K6-uKX"/>
+                            <constraint firstItem="p9F-zW-O44" firstAttribute="leading" secondItem="FGs-zQ-y8J" secondAttribute="leading" constant="8" id="FdF-5p-xNH"/>
+                            <constraint firstAttribute="trailing" secondItem="PeC-ja-xmB" secondAttribute="trailing" constant="8" id="HNo-u8-Raa"/>
+                            <constraint firstItem="PeC-ja-xmB" firstAttribute="leading" secondItem="FGs-zQ-y8J" secondAttribute="leading" constant="8" id="I10-87-x99"/>
+                            <constraint firstAttribute="trailing" secondItem="aPi-Rn-5p3" secondAttribute="trailing" constant="8" id="S4k-Gt-lJc"/>
+                            <constraint firstItem="PeC-ja-xmB" firstAttribute="top" secondItem="FGs-zQ-y8J" secondAttribute="top" constant="8" id="cte-YE-wvS"/>
+                            <constraint firstAttribute="bottom" secondItem="p9F-zW-O44" secondAttribute="bottom" constant="4" id="gAb-jX-oAg"/>
+                            <constraint firstAttribute="trailing" secondItem="Iy5-wh-F44" secondAttribute="trailing" constant="8.5" id="kDC-3F-SPd"/>
+                            <constraint firstAttribute="trailing" secondItem="okU-kE-gTh" secondAttribute="trailing" constant="8" id="nbt-xm-6Tg"/>
+                            <constraint firstItem="okU-kE-gTh" firstAttribute="top" secondItem="Iy5-wh-F44" secondAttribute="bottom" id="pqj-f0-Sx3"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="FGs-zQ-y8J" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="4ab-3F-E4s"/>
+                    <constraint firstItem="FGs-zQ-y8J" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="eMp-kG-KSX"/>
+                    <constraint firstAttribute="bottom" secondItem="FGs-zQ-y8J" secondAttribute="bottom" constant="8" id="iqE-E4-q5E"/>
+                    <constraint firstAttribute="trailing" secondItem="FGs-zQ-y8J" secondAttribute="trailing" constant="8" id="mi4-AT-SCW"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="budgetBidLabel" destination="gDd-WO-gRK" id="YoY-uX-gAP"/>
+                <outlet property="containerView" destination="FGs-zQ-y8J" id="Bm8-6C-zWm"/>
+                <outlet property="postDateLabel" destination="Q3C-Xd-4uT" id="sEn-Eh-dPY"/>
+                <outlet property="postTitleLabel" destination="PeC-ja-xmB" id="wLo-5z-t3k"/>
+                <outlet property="skillsPostLabel" destination="okU-kE-gTh" id="3mZ-bS-Bd0"/>
+                <outlet property="totalBidsLabel" destination="aPi-Rn-5p3" id="Ewm-qj-48o"/>
+            </connections>
+            <point key="canvasLocation" x="-466" y="-31"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="price" width="25" height="25"/>
+    </resources>
+</document>

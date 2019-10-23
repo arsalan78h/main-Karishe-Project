@@ -47,7 +47,7 @@ struct mobileDevDatum: Codable {
     let etAvatar: String
     let authorURL: String
     let authorName, budget: String
-   // let bidBudgetText: BidBudgetText
+//    let bidBudgetText: BidBudgetText
     let ratingScore: Int
     let projectComment, projectCommentTrim, postContentTrim: String
     let countWord: Int
@@ -98,7 +98,7 @@ struct mobileDevDatum: Codable {
         case authorURL = "author_url"
         case authorName = "author_name"
         case budget
-     //   case bidBudgetText = "bid_budget_text"
+//        case bidBudgetText = "bid_budget_text"
         case ratingScore = "rating_score"
         case projectComment = "project_comment"
         case projectCommentTrim = "project_comment_trim"
@@ -119,10 +119,16 @@ struct mobileDevDatum: Codable {
 //    case the0تومان = "0تومان"
 //}
 
+//enum BidBudgetText: String, Codable {
+//    case the000 = "$0.00"
+//}
+
 //enum EtPaymentPackage: String, Codable {
 //    case b1 = "B1"
 //    case the001 = "001"
 //}
+
+
 
 enum PostStatus: String, Codable {
     case archive = "archive"
@@ -168,6 +174,13 @@ enum ProjectStatusView: String, Codable {
     case فعال = "فعال"
 }
 
+//enum ProjectStatusView: String, Codable {
+//    case active = "Active"
+//    case archived = "Archived"
+//    case completed = "Completed"
+//}
+
+
 // MARK: - Skill
 struct Skill: Codable {
     let name: String
@@ -178,6 +191,12 @@ enum StatusText: String, Codable {
     case فعال = "فعال"
     case کاملشده = "کامل شده"
 }
+
+//enum StatusText: String, Codable {
+//    case active = "ACTIVE"
+//    case archived = "ARCHIVED"
+//    case completed = "COMPLETED"
+//}
 
 // MARK: - TaxInput
 struct TaxInput: Codable {
@@ -237,6 +256,12 @@ enum TextStatusJS: String, Codable {
     case کارفعالاست = "کار فعال است"
     case کارکاملشدهاست = "کار کامل شده است"
 }
+
+//enum TextStatusJS: String, Codable {
+//    case jobIsActive = "Job is active"
+//    case jobIsArchived = "Job is archived"
+//    case jobIsCompleted = "Job is completed"
+//}
 
 // MARK: - Encode/decode helpers
 
@@ -483,3 +508,16 @@ class mobileDevJSONAny: Codable {
         }
     }
 }
+
+//Removed:
+
+// status_text
+
+//project statusView
+
+///////////////////////////////////////////////////////////////
+//BUUUUUUUUG : agar total_Bids 0 bashe bug mide --> for debug this : make recursive func in catch block for get json data
+
+
+
+

@@ -1050,7 +1050,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hdl-lf-RY8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7571" y="3118"/>
+            <point key="canvasLocation" x="7570" y="3117"/>
         </scene>
         <!--دسته بندی ها-->
         <scene sceneID="z6W-8D-NwR">
@@ -1124,35 +1124,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="itemsCell" rowHeight="60" id="DQP-AZ-jrC" customClass="itemsOfCategoryCELL" customModule="UI_KARISHE" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="60"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DQP-AZ-jrC" id="MqM-YH-yWs">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mSZ-gr-GD4">
-                                            <rect key="frame" x="20" y="-1" width="374" height="50"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="374" id="4nM-1J-4Y0"/>
-                                                <constraint firstAttribute="height" constant="50" id="tcY-rd-2iS"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="mSZ-gr-GD4" secondAttribute="trailing" constant="20" id="1Vc-UL-6AL"/>
-                                        <constraint firstItem="mSZ-gr-GD4" firstAttribute="top" secondItem="MqM-YH-yWs" secondAttribute="top" constant="-1" id="Z4l-5j-OGn"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="titlePost" destination="mSZ-gr-GD4" id="Rga-Es-KHF"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="Wsd-Br-9Rx" id="wYA-GD-7mW"/>
                             <outlet property="delegate" destination="Wsd-Br-9Rx" id="QaM-C5-fhC"/>
